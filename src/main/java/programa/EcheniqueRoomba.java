@@ -43,9 +43,9 @@ public class EcheniqueRoomba {
 
         do {
 
-            usuario = JOptionPane.showInputDialog("Introduzca los metros cuadradaos de la cocina : ");
+            usuario = JOptionPane.showInputDialog("Introduzca el usuario: ");
 
-            password = JOptionPane.showInputDialog("Introduzca los metros cuadradaos de la cocina : ");
+            password = JOptionPane.showInputDialog("Introduzca la contraseña: ");
 
             if (usuario.equals("Alberto") && password.equals("Aspiradora")) {
 
@@ -120,11 +120,12 @@ public class EcheniqueRoomba {
                 case 2:
 
                     //Introducir nivel de bateria
-                    JOptionPane.showMessageDialog(
-                            null, "Ha entrado usted en carga");
-                    nivelBateria = random.nextInt(100) + 1;
+                 String bateria = JOptionPane.showInputDialog(
+                            null, "Introduzca el nivel de bateria (0-100");
+        
+                    nivelBateria = Integer.parseInt(bateria);
 
-                    System.out.println("El nivel de bateria es (0-100): " + nivelBateria + " %");
+                    System.out.println("El nivel de bateria es: " + nivelBateria + " %");
 
                     break;
 
