@@ -19,6 +19,7 @@ public class EcheniqueRoomba {
 
         Random random = new Random();
 
+        //VARIABLES
         //Usuario y contraseña
         String usuario = "Alberto";
         String password = "Aspiradora";
@@ -32,7 +33,6 @@ public class EcheniqueRoomba {
         //String modoCompleto, modoCarga;
         //int estadoGeneral;
         //String baseCarga, salir;
-        
         final double aspiradoFregado = 2.25;
 
         //Menu variables
@@ -41,6 +41,7 @@ public class EcheniqueRoomba {
         int opcionElegidaMenuCaracteristicas;
         boolean repetir = true;
 
+        //INTRODUCIR USUSARIO
         do {
 
             usuario = JOptionPane.showInputDialog("Introduzca el usuario: ");
@@ -62,31 +63,29 @@ public class EcheniqueRoomba {
 
         } while (!usuario.equals("Alberto") && !password.equals("Aspiradora"));
 
+        //MENU PRINCIPAL - CONFIGURAR SALIR
         do {
 
             do {
 
                 String menu = JOptionPane.showInputDialog(null, "MENU ASPIRADORA ECHNIQUEROOMBA \nEliga una opción:"
-                        + "\n1.- Configurar sistema"
-                        + "\n2.- Carga\n"
-                        + "3.- Aspiración\n"
-                        + "4.- Aspiracion y fregado\n"
-                        + "5.- Estado general\n"
-                        + "6.- Base de Carga\n"
+                        + "\n1.- Configurar sistema\n"
                         + "0.- Salir del programa\n");
                 //Recoger una variable por consola
                 opcionElegidaMenu = Integer.parseInt(menu);
 
-            } while (opcionElegidaMenu < 0 || opcionElegidaMenu > 7);
+            } while (opcionElegidaMenu < 0 || opcionElegidaMenu > 1);
 
             switch (opcionElegidaMenu) {
 
+                // CONFIGURAR SISTEMA
                 case 1:
 
                     //Introducir nivel bateria
                     JOptionPane.showMessageDialog(
                             null, "Ha entrado usted configurar sistema");
 
+                    //INTRODUCIR NUMERO DEPENDECIAS Y METROS
                     do {
 
                         String cocina = JOptionPane.showInputDialog("Introduzca los metros cuadradaos de la cocina : ");
@@ -115,124 +114,82 @@ public class EcheniqueRoomba {
                     JOptionPane.showMessageDialog(null, "Los metros cuadrados de la dependencias son: " + cocinaInt + " m2" + salonInt + " m2" + cuartoBañoInt + " m2"
                             + dormitorioUnoInt + " m2" + dormitorioDosInt + " m2");
 
-                    break;
+                     {
 
-                case 2:
+                        //INTRODUCIR NIVEL BATERIA
+                        do {
 
-                    //Introducir nivel de bateria
-                 String bateria = JOptionPane.showInputDialog(
-                            null, "Introduzca el nivel de bateria (0-100");
-        
-                    nivelBateria = Integer.parseInt(bateria);
+                            String bateria = JOptionPane.showInputDialog(
+                                    null, "Introduzca el nivel de bateria (0-100");
 
+                            nivelBateria = Integer.parseInt(bateria);
+                        } while (nivelBateria <= 0 || nivelBateria > 100);
+                    }
                     System.out.println("El nivel de bateria es: " + nivelBateria + " %");
 
-                    break;
-
-                case 3:
-
+                    //MODOS DE USO
                     do {
 
                         String menuModo = JOptionPane.showInputDialog(null, "MENU MODO\nEliga una opción:\n1.- Modo completo"
                                 + "\n2.- Modo dependencias\n"
-                                + "0.- Salir del programa\n");
+                                + "n2.- Aspirado y fregado\n");
                         //Recoger una variable por consola
                         opcionModo = Integer.parseInt(menuModo);
 
-                    } while (opcionModo < 0 || opcionModo > 2);
+                        if (opcionModo == 1) {
 
-                    switch (opcionModo) {
+                        } else if (opcionModo == 2) {
 
-                        case 1:
-
-                            break;
-
-                        case 2:
-
-                            break;
-
-                        default:
+                        } else if (opcionModo == 3) {
 
                             JOptionPane.showMessageDialog(
-                                    null, "Saliendo del menu...");
+                                    null, "Ha entrado usted en Aspiracion y fregado");
 
-                            break;
+                            nivelBateria = (int) (nivelBateria / aspiradoFregado);
 
-                    }
+                            JOptionPane.showMessageDialog(
+                                    null, "El nivel de bateria es: " + nivelBateria + " %");
 
-                    break;
+                        }
 
-                case 4:
+                    } while (opcionModo < 0 || opcionModo > 3);
 
-                    JOptionPane.showMessageDialog(
-                            null, "Ha entrado usted en Aspiracion y fregado");
-
-                    nivelBateria = (int) (nivelBateria / aspiradoFregado);
-
-                    JOptionPane.showMessageDialog(
-                            null, "El nivel de bateria es: " + nivelBateria + " %");
-
-                    break;
-
-                case 5:
-
+                    //MENU CARACTERISTICAS
                     do {
 
                         String menuCaracteristicas = JOptionPane.showInputDialog(null, "MENU CARACTERISTICAS\nEliga una opción:\n1.- Fecha y Hora"
                                 + "\n2.- Nivel de Bateria\n"
                                 + "3.- Lugar donde esta parado\n"
-                                + "4.- Dependencias y metros cuadrados\n"
-                                + "0.- Salir del programa\n");
+                                + "4.- Dependencias y metros cuadrados\n");
                         //Recoger una variable por consola
                         opcionElegidaMenuCaracteristicas = Integer.parseInt(menuCaracteristicas);
 
-                    } while (opcionElegidaMenuCaracteristicas < 0 || opcionElegidaMenuCaracteristicas > 4);
-
-                    switch (opcionElegidaMenuCaracteristicas) {
-
-                        case 1:
+                        if (opcionElegidaMenuCaracteristicas == 1) {
 
                             LocalDateTime locaDate = LocalDateTime.now();
                             int horas = locaDate.getHour();
                             int minutos = locaDate.getMinute();
                             int segundos = locaDate.getSecond();
-                            
+
                             JOptionPane.showMessageDialog(null, "Hora actual : " + horas + ":" + minutos + ":" + segundos);
-                            
 
-                            break;
-
-                        case 2:
+                        } else if (opcionElegidaMenuCaracteristicas == 2) {
 
                             JOptionPane.showMessageDialog(
                                     null, "El nivel de bateria es: " + nivelBateria + " %");
 
-                            break;
+                        } else if (opcionElegidaMenuCaracteristicas == 3) {
 
-                        case 3:
-
-                            break;
-
-                        case 4:
+                        } else if (opcionElegidaMenuCaracteristicas == 4) {
 
                             JOptionPane.showMessageDialog(
                                     null, "Los metros cuadrados de la dependencias son: " + cocinaInt + " m2" + salonInt + " m2" + cuartoBañoInt + " m2"
                                     + dormitorioUnoInt + " m2" + dormitorioDosInt + " m2");
+                        }
 
-                            break;
+                    } while (opcionElegidaMenuCaracteristicas < 0 || opcionElegidaMenuCaracteristicas > 4);
 
-                        default:
-                            JOptionPane.showMessageDialog(
-                                    null, "Saliendo del menu...");
-
-                            break;
-
-                    }
-
-                    break;
-
-                case 6:
-
+                    //BASE CARGA
                     JOptionPane.showMessageDialog(
                             null, "Ha entrado usted en Base de carga: Entrando en modo de carga de bateria "
                             + "espere hasta que la carga llegue al 100%");
@@ -247,8 +204,7 @@ public class EcheniqueRoomba {
                     JOptionPane.showMessageDialog(
                             null, "Carga de la bateria completa: " + nivelBateria + " %");
 
-                    break;
-
+                //SALIDA
                 default:
 
                     JOptionPane.showMessageDialog(
@@ -257,6 +213,7 @@ public class EcheniqueRoomba {
                     break;
             }
 
+            //PREGUNTAR PARA SALIR
             int op = JOptionPane.showConfirmDialog(null,
                     "¿Deseas salir?", "Salida del programa", JOptionPane.YES_NO_OPTION);
 
