@@ -13,7 +13,7 @@ import javax.swing.JOptionPane;
  *
  * @author GR6
  */
-public class EcheniqueRoomba {
+public class AspiradoraRoomba {
 
     public static void main(String[] args) {
 
@@ -44,13 +44,15 @@ public class EcheniqueRoomba {
         //INTRODUCIR USUSARIO
         do {
 
+            JOptionPane.showMessageDialog(null, "ASPIRADORA ROOMBA");
+
             usuario = JOptionPane.showInputDialog("Introduzca el usuario: ");
 
             password = JOptionPane.showInputDialog("Introduzca la contraseña: ");
 
             if (usuario.equals("Alberto") && password.equals("Aspiradora")) {
 
-                JOptionPane.showMessageDialog(null, "Bienvenido\n Has ingresado "
+                JOptionPane.showMessageDialog(null, "Bienvenido:\n Has ingresado "
                         + "satisfactoriamente al sistema", "Mensaje de bienvenida",
                         JOptionPane.INFORMATION_MESSAGE);
 
@@ -59,6 +61,8 @@ public class EcheniqueRoomba {
                 JOptionPane.showMessageDialog(null, "Acceso denegado:\n"
                         + "Por favor ingrese un usuario y/o contraseña correctos",
                         "Acceso denegado", JOptionPane.ERROR_MESSAGE);
+
+                JOptionPane.showMessageDialog(null, "El usuario es Alberto y la contraseña es Aspiradora");
             }
 
         } while (!usuario.equals("Alberto") && !password.equals("Aspiradora"));
@@ -66,31 +70,31 @@ public class EcheniqueRoomba {
         //INTRODUCIR NUMERO DEPENDECIAS Y METROS
         do {
 
-            String cocina = JOptionPane.showInputDialog("Introduzca los metros cuadradaos de la cocina : ");
+            String cocina = JOptionPane.showInputDialog("Introduzca los metros cuadrados de la cocina : ");
 
             cocinaInt = Integer.parseInt(cocina);
 
-            String salon = JOptionPane.showInputDialog("Introduzca los metros cuadradaos de la cocina : ");
+            String salon = JOptionPane.showInputDialog("Introduzca los metros cuadrados de la cocina : ");
 
             salonInt = Integer.parseInt(salon);
 
-            String cuartoBaño = JOptionPane.showInputDialog("Introduzca los metros cuadradaos de la cocina : ");
+            String cuartoBaño = JOptionPane.showInputDialog("Introduzca los metros cuadrados de la cocina : ");
 
             cuartoBañoInt = Integer.parseInt(cuartoBaño);
 
-            String dormitorioUno = JOptionPane.showInputDialog("Introduzca los metros cuadradaos de la cocina : ");
+            String dormitorioUno = JOptionPane.showInputDialog("Introduzca los metros cuadrados de la cocina : ");
 
             dormitorioUnoInt = Integer.parseInt(dormitorioUno);
 
-            String dormitorioDos = JOptionPane.showInputDialog("Introduzca los metros cuadradaos de la cocina : ");
+            String dormitorioDos = JOptionPane.showInputDialog("Introduzca los metros cuadrados de la cocina : ");
 
             dormitorioDosInt = Integer.parseInt(dormitorioDos);
 
         } while (cocinaInt < 0 || cocinaInt > 100 && salonInt < 0 || salonInt > 100 && cuartoBañoInt < 0 || cuartoBañoInt > 100
                 && dormitorioUnoInt < 0 || dormitorioUnoInt > 100 && dormitorioDosInt < 0 || dormitorioDosInt > 100);
 
-        JOptionPane.showMessageDialog(null, "Los metros cuadrados de la dependencias son: " + cocinaInt + " m2" + salonInt + " m2" + cuartoBañoInt + " m2"
-                + dormitorioUnoInt + " m2" + dormitorioDosInt + " m2");
+        JOptionPane.showMessageDialog(null, "Los metros cuadrados de la dependencias son: " + cocinaInt + " m2, " + salonInt + " m2, " + cuartoBañoInt + " m2, "
+                + dormitorioUnoInt + " m2, " + dormitorioDosInt + " m2 ");
 
         {
 
@@ -103,14 +107,14 @@ public class EcheniqueRoomba {
                 nivelBateria = Integer.parseInt(bateria);
             } while (nivelBateria <= 0 || nivelBateria > 100);
         }
-        System.out.println("El nivel de bateria es: " + nivelBateria + " %");
+        JOptionPane.showMessageDialog(null, "El nivel de bateria es: " + nivelBateria + " %");
 
         //MENU PRINCIPAL - CONFIGURAR SALIR
         do {
 
             do {
 
-                String menu = JOptionPane.showInputDialog(null, "MENU ASPIRADORA ECHNIQUEROOMBA \nEliga una opción:"
+                String menu = JOptionPane.showInputDialog(null, "MENU ASPIRADORA \nEliga una opción:"
                         + "\n1.- Configurar sistema\n"
                         + "0.- Salir del programa\n");
                 //Recoger una variable por consola
@@ -137,21 +141,52 @@ public class EcheniqueRoomba {
                         opcionModo = Integer.parseInt(menuModo);
 
                         if (opcionModo == 1) {
-                            
+
                             JOptionPane.showMessageDialog(
                                     null, "Ha entrado usted en Modo completo");
-                            
-                         
+
+                            if (nivelBateria <= 0) {
+                                //BASE CARGA
+                                JOptionPane.showMessageDialog(
+                                        null, "Ha entrado usted en Base de carga: Entrando en modo de carga de bateria "
+                                        + "espere hasta que la carga llegue al 100%");
+
+                                for (nivelBateria = 0; nivelBateria < 100; nivelBateria++) {
+
+                                    JOptionPane.showMessageDialog(
+                                            null, "El nivel de bateria es: " + nivelBateria + " %");
+
+                                }
+
+                                JOptionPane.showMessageDialog(
+                                        null, "Carga de la bateria completa: " + nivelBateria + " %");
+
+                            }
 
                         } else if (opcionModo == 2) {
-                            
+
                             JOptionPane.showMessageDialog(
                                     null, "Ha entrado usted en Modo dependencias");
-                            
-                            
+
+                            if (nivelBateria <= 0) {
+                                //BASE CARGA
+                                JOptionPane.showMessageDialog(
+                                        null, "Ha entrado usted en Base de carga: Entrando en modo de carga de bateria "
+                                        + "espere hasta que la carga llegue al 100%");
+
+                                for (nivelBateria = 0; nivelBateria < 100; nivelBateria++) {
+
+                                    JOptionPane.showMessageDialog(
+                                            null, "El nivel de bateria es: " + nivelBateria + " %");
+
+                                }
+
+                                JOptionPane.showMessageDialog(
+                                        null, "Carga de la bateria completa: " + nivelBateria + " %");
+
+                            }
 
                         } else if (opcionModo == 3) {
-                            
 
                             JOptionPane.showMessageDialog(
                                     null, "Ha entrado usted en Aspiracion y fregado");
@@ -160,6 +195,24 @@ public class EcheniqueRoomba {
 
                             JOptionPane.showMessageDialog(
                                     null, "El nivel de bateria es: " + nivelBateria + " %");
+
+                            if (nivelBateria <= 0) {
+                                //BASE CARGA
+                                JOptionPane.showMessageDialog(
+                                        null, "Ha entrado usted en Base de carga: Entrando en modo de carga de bateria "
+                                        + "espere hasta que la carga llegue al 100%");
+
+                                for (nivelBateria = 0; nivelBateria < 100; nivelBateria++) {
+
+                                    JOptionPane.showMessageDialog(
+                                            null, "El nivel de bateria es: " + nivelBateria + " %");
+
+                                }
+
+                                JOptionPane.showMessageDialog(
+                                        null, "Carga de la bateria completa: " + nivelBateria + " %");
+
+                            }
 
                         }
 
@@ -199,14 +252,14 @@ public class EcheniqueRoomba {
                                 JOptionPane.showMessageDialog(
                                         null, "Los metros cuadrados de la dependencias son: " + cocinaInt + " m2" + salonInt + " m2" + cuartoBañoInt + " m2"
                                         + dormitorioUnoInt + " m2" + dormitorioDosInt + " m2");
-                                
-                            }else if (opcionElegidaMenuCaracteristicas == 5){
-                                
+
+                            } else if (opcionElegidaMenuCaracteristicas == 5) {
+
                                 JOptionPane.showMessageDialog(null, "Saliendo del menu...");
-                                
+
                             }
 
-                        } while (opcionElegidaMenuCaracteristicas < 0 || opcionElegidaMenuCaracteristicas > 4);
+                        } while (opcionElegidaMenuCaracteristicas < 0 || opcionElegidaMenuCaracteristicas > 5);
 
                         int op = JOptionPane.showConfirmDialog(null,
                                 "¿Deseas salir del menu?", "Salida del menú", JOptionPane.YES_NO_OPTION);
@@ -224,21 +277,6 @@ public class EcheniqueRoomba {
 
                     } while (repetir);
 
-                    //BASE CARGA
-                    JOptionPane.showMessageDialog(
-                            null, "Ha entrado usted en Base de carga: Entrando en modo de carga de bateria "
-                            + "espere hasta que la carga llegue al 100%");
-
-                    for (nivelBateria = 0; nivelBateria < 100; nivelBateria++) {
-
-                        JOptionPane.showMessageDialog(
-                                null, "El nivel de bateria es: " + nivelBateria + " %");
-
-                    }
-
-                    JOptionPane.showMessageDialog(
-                            null, "Carga de la bateria completa: " + nivelBateria + " %");
-
                 //SALIDA
                 default:
 
@@ -255,12 +293,14 @@ public class EcheniqueRoomba {
             // System.out.println("Opcion: " + op); // Depuración
             if (op == JOptionPane.YES_OPTION) {
                 // Quiere salir
-                System.out.println("Saliendo del programa...."); // Depuración
+                JOptionPane.showMessageDialog(
+                        null, "Saliendo del programa...."); // Depuración
                 repetir = false; // Condición de parada del programa
 
             } else {
 
-                System.out.println("Indique otra instrucción a realizar:");
+                JOptionPane.showMessageDialog(
+                        null, "Indique otra instrucción a realizar:");
             }
 
         } while (repetir);
