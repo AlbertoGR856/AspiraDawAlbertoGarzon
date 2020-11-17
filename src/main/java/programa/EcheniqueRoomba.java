@@ -63,6 +63,48 @@ public class EcheniqueRoomba {
 
         } while (!usuario.equals("Alberto") && !password.equals("Aspiradora"));
 
+        //INTRODUCIR NUMERO DEPENDECIAS Y METROS
+        do {
+
+            String cocina = JOptionPane.showInputDialog("Introduzca los metros cuadradaos de la cocina : ");
+
+            cocinaInt = Integer.parseInt(cocina);
+
+            String salon = JOptionPane.showInputDialog("Introduzca los metros cuadradaos de la cocina : ");
+
+            salonInt = Integer.parseInt(salon);
+
+            String cuartoBaño = JOptionPane.showInputDialog("Introduzca los metros cuadradaos de la cocina : ");
+
+            cuartoBañoInt = Integer.parseInt(cuartoBaño);
+
+            String dormitorioUno = JOptionPane.showInputDialog("Introduzca los metros cuadradaos de la cocina : ");
+
+            dormitorioUnoInt = Integer.parseInt(dormitorioUno);
+
+            String dormitorioDos = JOptionPane.showInputDialog("Introduzca los metros cuadradaos de la cocina : ");
+
+            dormitorioDosInt = Integer.parseInt(dormitorioDos);
+
+        } while (cocinaInt < 0 || cocinaInt > 100 && salonInt < 0 || salonInt > 100 && cuartoBañoInt < 0 || cuartoBañoInt > 100
+                && dormitorioUnoInt < 0 || dormitorioUnoInt > 100 && dormitorioDosInt < 0 || dormitorioDosInt > 100);
+
+        JOptionPane.showMessageDialog(null, "Los metros cuadrados de la dependencias son: " + cocinaInt + " m2" + salonInt + " m2" + cuartoBañoInt + " m2"
+                + dormitorioUnoInt + " m2" + dormitorioDosInt + " m2");
+
+        {
+
+            //INTRODUCIR NIVEL BATERIA
+            do {
+
+                String bateria = JOptionPane.showInputDialog(
+                        null, "Introduzca el nivel de bateria (0-100");
+
+                nivelBateria = Integer.parseInt(bateria);
+            } while (nivelBateria <= 0 || nivelBateria > 100);
+        }
+        System.out.println("El nivel de bateria es: " + nivelBateria + " %");
+
         //MENU PRINCIPAL - CONFIGURAR SALIR
         do {
 
@@ -85,62 +127,31 @@ public class EcheniqueRoomba {
                     JOptionPane.showMessageDialog(
                             null, "Ha entrado usted configurar sistema");
 
-                    //INTRODUCIR NUMERO DEPENDECIAS Y METROS
-                    do {
-
-                        String cocina = JOptionPane.showInputDialog("Introduzca los metros cuadradaos de la cocina : ");
-
-                        cocinaInt = Integer.parseInt(cocina);
-
-                        String salon = JOptionPane.showInputDialog("Introduzca los metros cuadradaos de la cocina : ");
-
-                        salonInt = Integer.parseInt(salon);
-
-                        String cuartoBaño = JOptionPane.showInputDialog("Introduzca los metros cuadradaos de la cocina : ");
-
-                        cuartoBañoInt = Integer.parseInt(cuartoBaño);
-
-                        String dormitorioUno = JOptionPane.showInputDialog("Introduzca los metros cuadradaos de la cocina : ");
-
-                        dormitorioUnoInt = Integer.parseInt(dormitorioUno);
-
-                        String dormitorioDos = JOptionPane.showInputDialog("Introduzca los metros cuadradaos de la cocina : ");
-
-                        dormitorioDosInt = Integer.parseInt(dormitorioDos);
-
-                    } while (cocinaInt < 0 || cocinaInt > 100 && salonInt < 0 || salonInt > 100 && cuartoBañoInt < 0 || cuartoBañoInt > 100
-                            && dormitorioUnoInt < 0 || dormitorioUnoInt > 100 && dormitorioDosInt < 0 || dormitorioDosInt > 100);
-
-                    JOptionPane.showMessageDialog(null, "Los metros cuadrados de la dependencias son: " + cocinaInt + " m2" + salonInt + " m2" + cuartoBañoInt + " m2"
-                            + dormitorioUnoInt + " m2" + dormitorioDosInt + " m2");
-
-                     {
-
-                        //INTRODUCIR NIVEL BATERIA
-                        do {
-
-                            String bateria = JOptionPane.showInputDialog(
-                                    null, "Introduzca el nivel de bateria (0-100");
-
-                            nivelBateria = Integer.parseInt(bateria);
-                        } while (nivelBateria <= 0 || nivelBateria > 100);
-                    }
-                    System.out.println("El nivel de bateria es: " + nivelBateria + " %");
-
                     //MODOS DE USO
                     do {
 
                         String menuModo = JOptionPane.showInputDialog(null, "MENU MODO\nEliga una opción:\n1.- Modo completo"
                                 + "\n2.- Modo dependencias\n"
-                                + "n2.- Aspirado y fregado\n");
+                                + "n3.- Aspirado y fregado\n");
                         //Recoger una variable por consola
                         opcionModo = Integer.parseInt(menuModo);
 
                         if (opcionModo == 1) {
+                            
+                            JOptionPane.showMessageDialog(
+                                    null, "Ha entrado usted en Modo completo");
+                            
+                         
 
                         } else if (opcionModo == 2) {
+                            
+                            JOptionPane.showMessageDialog(
+                                    null, "Ha entrado usted en Modo dependencias");
+                            
+                            
 
                         } else if (opcionModo == 3) {
+                            
 
                             JOptionPane.showMessageDialog(
                                     null, "Ha entrado usted en Aspiracion y fregado");
@@ -157,37 +168,61 @@ public class EcheniqueRoomba {
                     //MENU CARACTERISTICAS
                     do {
 
-                        String menuCaracteristicas = JOptionPane.showInputDialog(null, "MENU CARACTERISTICAS\nEliga una opción:\n1.- Fecha y Hora"
-                                + "\n2.- Nivel de Bateria\n"
-                                + "3.- Lugar donde esta parado\n"
-                                + "4.- Dependencias y metros cuadrados\n");
-                        //Recoger una variable por consola
-                        opcionElegidaMenuCaracteristicas = Integer.parseInt(menuCaracteristicas);
+                        do {
 
-                        if (opcionElegidaMenuCaracteristicas == 1) {
+                            String menuCaracteristicas = JOptionPane.showInputDialog(null, "MENU CARACTERISTICAS\nEliga una opción:\n1.- Fecha y Hora"
+                                    + "\n2.- Nivel de Bateria\n"
+                                    + "3.- Lugar donde esta parado\n"
+                                    + "4.- Dependencias y metros cuadrados\n"
+                                    + "5. - Salir del menu\n");
+                            //Recoger una variable por consola
+                            opcionElegidaMenuCaracteristicas = Integer.parseInt(menuCaracteristicas);
 
-                            LocalDateTime locaDate = LocalDateTime.now();
-                            int horas = locaDate.getHour();
-                            int minutos = locaDate.getMinute();
-                            int segundos = locaDate.getSecond();
+                            if (opcionElegidaMenuCaracteristicas == 1) {
 
-                            JOptionPane.showMessageDialog(null, "Hora actual : " + horas + ":" + minutos + ":" + segundos);
+                                LocalDateTime locaDate = LocalDateTime.now();
+                                int horas = locaDate.getHour();
+                                int minutos = locaDate.getMinute();
+                                int segundos = locaDate.getSecond();
 
-                        } else if (opcionElegidaMenuCaracteristicas == 2) {
+                                JOptionPane.showMessageDialog(null, "Hora actual : " + horas + ":" + minutos + ":" + segundos);
 
-                            JOptionPane.showMessageDialog(
-                                    null, "El nivel de bateria es: " + nivelBateria + " %");
+                            } else if (opcionElegidaMenuCaracteristicas == 2) {
 
-                        } else if (opcionElegidaMenuCaracteristicas == 3) {
+                                JOptionPane.showMessageDialog(
+                                        null, "El nivel de bateria es: " + nivelBateria + " %");
 
-                        } else if (opcionElegidaMenuCaracteristicas == 4) {
+                            } else if (opcionElegidaMenuCaracteristicas == 3) {
 
-                            JOptionPane.showMessageDialog(
-                                    null, "Los metros cuadrados de la dependencias son: " + cocinaInt + " m2" + salonInt + " m2" + cuartoBañoInt + " m2"
-                                    + dormitorioUnoInt + " m2" + dormitorioDosInt + " m2");
+                            } else if (opcionElegidaMenuCaracteristicas == 4) {
+
+                                JOptionPane.showMessageDialog(
+                                        null, "Los metros cuadrados de la dependencias son: " + cocinaInt + " m2" + salonInt + " m2" + cuartoBañoInt + " m2"
+                                        + dormitorioUnoInt + " m2" + dormitorioDosInt + " m2");
+                                
+                            }else if (opcionElegidaMenuCaracteristicas == 5){
+                                
+                                JOptionPane.showMessageDialog(null, "Saliendo del menu...");
+                                
+                            }
+
+                        } while (opcionElegidaMenuCaracteristicas < 0 || opcionElegidaMenuCaracteristicas > 4);
+
+                        int op = JOptionPane.showConfirmDialog(null,
+                                "¿Deseas salir del menu?", "Salida del menú", JOptionPane.YES_NO_OPTION);
+
+                        // System.out.println("Opcion: " + op); // Depuración
+                        if (op == JOptionPane.YES_OPTION) {
+                            // Quiere salir
+                            System.out.println("Saliendo del menú...."); // Depuración
+                            repetir = false; // Condición de parada del programa
+
+                        } else {
+
+                            System.out.println("Indique otra opcion:");
                         }
 
-                    } while (opcionElegidaMenuCaracteristicas < 0 || opcionElegidaMenuCaracteristicas > 4);
+                    } while (repetir);
 
                     //BASE CARGA
                     JOptionPane.showMessageDialog(
