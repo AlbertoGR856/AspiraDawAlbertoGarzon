@@ -70,44 +70,58 @@ public class AspiradoraRoomba {
         //INTRODUCIR NUMERO DEPENDECIAS Y METROS
         do {
 
-            String cocina = JOptionPane.showInputDialog("Introduzca los metros cuadrados de la cocina : ");
+            String cocina = JOptionPane.showInputDialog("Introduzca los metros cuadrados de la cocina: ");
 
             cocinaInt = Integer.parseInt(cocina);
 
-            String salon = JOptionPane.showInputDialog("Introduzca los metros cuadrados de la cocina : ");
+        } while (cocinaInt < 0 || cocinaInt > 100);
+
+        do {
+
+            String salon = JOptionPane.showInputDialog("Introduzca los metros cuadrados del salón: ");
 
             salonInt = Integer.parseInt(salon);
 
-            String cuartoBaño = JOptionPane.showInputDialog("Introduzca los metros cuadrados de la cocina : ");
+        } while (salonInt < 0 || salonInt > 100);
+
+        do {
+
+            String cuartoBaño = JOptionPane.showInputDialog("Introduzca los metros cuadrados del cuartobaño: ");
 
             cuartoBañoInt = Integer.parseInt(cuartoBaño);
 
-            String dormitorioUno = JOptionPane.showInputDialog("Introduzca los metros cuadrados de la cocina : ");
+        } while (cuartoBañoInt < 0 || cuartoBañoInt > 100);
+
+        do {
+
+            String dormitorioUno = JOptionPane.showInputDialog("Introduzca los metros cuadrados del dormitorio 1: ");
 
             dormitorioUnoInt = Integer.parseInt(dormitorioUno);
 
-            String dormitorioDos = JOptionPane.showInputDialog("Introduzca los metros cuadrados de la cocina : ");
+        } while (dormitorioUnoInt < 0 || dormitorioUnoInt > 100);
+
+        do {
+
+            String dormitorioDos = JOptionPane.showInputDialog("Introduzca los metros cuadrados del dormitorio 2: ");
 
             dormitorioDosInt = Integer.parseInt(dormitorioDos);
 
-        } while (cocinaInt < 0 || cocinaInt > 100 && salonInt < 0 || salonInt > 100 && cuartoBañoInt < 0 || cuartoBañoInt > 100
-                && dormitorioUnoInt < 0 || dormitorioUnoInt > 100 && dormitorioDosInt < 0 || dormitorioDosInt > 100);
+        } while (dormitorioDosInt < 0 || dormitorioDosInt > 100);
 
-        JOptionPane.showMessageDialog(null, "Los metros cuadrados de la dependencias son: " + cocinaInt + " m2, " + salonInt + " m2, " + cuartoBañoInt + " m2, "
-                + dormitorioUnoInt + " m2, " + dormitorioDosInt + " m2 ");
+        JOptionPane.showMessageDialog(null, "Los metros cuadrados de la dependencias son: " + " cocina: " + cocinaInt + " m2" + " salón: " + salonInt + " m2" + " cuarto de baño: " + cuartoBañoInt + " m2"
+                + " dormitorio 1: " + dormitorioUnoInt + " m2" + " dormitorio 2: " + dormitorioDosInt + " m2");
 
-        {
+        //INTRODUCIR NIVEL BATERIA
+        do {
 
-            //INTRODUCIR NIVEL BATERIA
-            do {
+            String bateria = JOptionPane.showInputDialog(
+                    null, "Introduzca el nivel de bateria (0-100");
 
-                String bateria = JOptionPane.showInputDialog(
-                        null, "Introduzca el nivel de bateria (0-100");
+            nivelBateria = Integer.parseInt(bateria);
+        } while (nivelBateria <= 0 || nivelBateria > 100);
 
-                nivelBateria = Integer.parseInt(bateria);
-            } while (nivelBateria <= 0 || nivelBateria > 100);
-        }
-        JOptionPane.showMessageDialog(null, "El nivel de bateria es: " + nivelBateria + " %");
+        JOptionPane.showMessageDialog(
+                null, "El nivel de bateria es: " + nivelBateria + " %");
 
         //MENU PRINCIPAL - CONFIGURAR SALIR
         do {
@@ -136,7 +150,7 @@ public class AspiradoraRoomba {
 
                         String menuModo = JOptionPane.showInputDialog(null, "MENU MODO\nEliga una opción:\n1.- Modo completo"
                                 + "\n2.- Modo dependencias\n"
-                                + "n3.- Aspirado y fregado\n");
+                                + "3.- Aspirado y fregado\n");
                         //Recoger una variable por consola
                         opcionModo = Integer.parseInt(menuModo);
 
@@ -249,9 +263,8 @@ public class AspiradoraRoomba {
 
                             } else if (opcionElegidaMenuCaracteristicas == 4) {
 
-                                JOptionPane.showMessageDialog(
-                                        null, "Los metros cuadrados de la dependencias son: " + cocinaInt + " m2" + salonInt + " m2" + cuartoBañoInt + " m2"
-                                        + dormitorioUnoInt + " m2" + dormitorioDosInt + " m2");
+                                JOptionPane.showMessageDialog(null, "Los metros cuadrados de la dependencias son: " + " cocina: " + cocinaInt + " m2" + " salón: " + salonInt + " m2" + " cuarto de baño: " + cuartoBañoInt + " m2"
+                                        + " dormitorio 1: " + dormitorioUnoInt + " m2" + " dormitorio 2: " + dormitorioDosInt + " m2");
 
                             } else if (opcionElegidaMenuCaracteristicas == 5) {
 
