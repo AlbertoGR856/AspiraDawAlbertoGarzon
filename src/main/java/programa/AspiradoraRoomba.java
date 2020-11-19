@@ -34,7 +34,9 @@ public class AspiradoraRoomba {
         //int estadoGeneral;
         //String baseCarga, salir;
         //Una constante de tipo double para establecer el gasto de bateria en el modo aspiración y fregado
+        final double aspiracionMetroCuadrado = 1.50;
         final double aspiradoFregado = 2.25;
+        double bateriaActual = 0;
 
         //Variables de tipo entero para establecer las opciones del menu
         int opcionElegidaMenu;
@@ -117,11 +119,10 @@ public class AspiradoraRoomba {
         } while (dormitorioDosInt < 0 || dormitorioDosInt > 100);
 
         //Se muestra los metros de cada dependencia introducida
-        JOptionPane.showMessageDialog(null, "Los metros cuadrados de la dependencias son: " + " cocina: " + cocinaInt + " m2" + " salón: " + salonInt + " m2" + " cuarto de baño: " + cuartoBañoInt + " m2"
-                + " dormitorio 1: " + dormitorioUnoInt + " m2" + " dormitorio 2: " + dormitorioDosInt + " m2");
+        JOptionPane.showMessageDialog(null, "Los metros cuadrados de la dependencias son: " + " cocina: " + cocinaInt + "m2," + " salón: " + salonInt + "m2," + " cuarto de baño: " + cuartoBañoInt + "m2,"
+                + " dormitorio 1: " + dormitorioUnoInt + "m2," + " dormitorio 2: " + dormitorioDosInt + "m2");
 
         //INTRODUCIR NIVEL BATERIA
-        
         //Bucle do-while donde el nivel de bateria no puede tener un valor fuera del rango 0-100
         do {
 
@@ -136,7 +137,6 @@ public class AspiradoraRoomba {
                 null, "El nivel de bateria es: " + nivelBateria + " %");
 
         //MENU PRINCIPAL - CONFIGURAR Y SALIR
-        
         //Con este do-while se repetira el bucle en caso de elegir no salir del programa
         do {
 
@@ -157,7 +157,6 @@ public class AspiradoraRoomba {
                 // CONFIGURAR SISTEMA
                 case 1:
 
-                    
                     JOptionPane.showMessageDialog(
                             null, "Ha entrado usted configurar sistema");
 
@@ -175,21 +174,34 @@ public class AspiradoraRoomba {
                             JOptionPane.showMessageDialog(
                                     null, "Ha entrado usted en Modo completo");
 
-                            if (nivelBateria < 3) {
+                            JOptionPane.showMessageDialog(
+                                    null, "El nivel de bateria es: " + nivelBateria + " %");
+
+                            JOptionPane.showMessageDialog(
+                                    null, "Empezando por la cocina: " + cocinaInt);
+
+                            for (int i = 0; i > cocinaInt; i++) {
+
+                                bateriaActual = nivelBateria - aspiracionMetroCuadrado;
+
+                            }
+
+                            JOptionPane.showMessageDialog(
+                                    null, "El nivel de bateria es: " + bateriaActual + " %");
+
+                            if (bateriaActual < 3) {
+
                                 //BASE CARGA
                                 JOptionPane.showMessageDialog(
                                         null, "Ha entrado usted en Base de carga: Entrando en modo de carga de bateria "
                                         + "espere hasta que la carga llegue al 100%");
 
-                                for (nivelBateria = 0; nivelBateria < 100; nivelBateria++) {
-
-                                    JOptionPane.showMessageDialog(
-                                            null, "El nivel de bateria es: " + nivelBateria + " %");
+                                for (bateriaActual = 0; bateriaActual < 100; bateriaActual++) {
 
                                 }
 
                                 JOptionPane.showMessageDialog(
-                                        null, "Carga de la bateria completa: " + nivelBateria + " %");
+                                        null, "Carga de la bateria completa: " + bateriaActual + " %");
 
                             }
 
@@ -198,16 +210,13 @@ public class AspiradoraRoomba {
                             JOptionPane.showMessageDialog(
                                     null, "Ha entrado usted en Modo dependencias");
 
-                            if (nivelBateria <= 0) {
+                            if (nivelBateria < 3) {
                                 //BASE CARGA
                                 JOptionPane.showMessageDialog(
                                         null, "Ha entrado usted en Base de carga: Entrando en modo de carga de bateria "
                                         + "espere hasta que la carga llegue al 100%");
 
                                 for (nivelBateria = 0; nivelBateria < 100; nivelBateria++) {
-
-                                    JOptionPane.showMessageDialog(
-                                            null, "El nivel de bateria es: " + nivelBateria + " %");
 
                                 }
 
@@ -289,8 +298,8 @@ public class AspiradoraRoomba {
                                 //Se muestran las dependencias y sus metros cuadrados
                             } else if (opcionElegidaMenuCaracteristicas == 4) {
 
-                                JOptionPane.showMessageDialog(null, "Los metros cuadrados de la dependencias son: " + " cocina: " + cocinaInt + " m2" + " salón: " + salonInt + " m2" + " cuarto de baño: " + cuartoBañoInt + " m2"
-                                        + " dormitorio 1: " + dormitorioUnoInt + " m2" + " dormitorio 2: " + dormitorioDosInt + " m2");
+                                JOptionPane.showMessageDialog(null, "Los metros cuadrados de la dependencias son: " + " cocina: " + cocinaInt + "m2," + " salón: " + salonInt + "m2," + " cuarto de baño: " + cuartoBañoInt + "m2,"
+                                        + " dormitorio 1: " + dormitorioUnoInt + "m2," + " dormitorio 2: " + dormitorioDosInt + "m2");
 
                                 //Opción para salir del menú
                             } else if (opcionElegidaMenuCaracteristicas == 5) {
@@ -302,12 +311,11 @@ public class AspiradoraRoomba {
                             //Si se cumle la condicion del while, se repite el bucle
                         } while (opcionElegidaMenuCaracteristicas < 0 || opcionElegidaMenuCaracteristicas > 5);
 
-                         //Se pregunta al usuario si quiere salir del menú, con la ventana JOptionPane.YES_NO_OPTION
+                        //Se pregunta al usuario si quiere salir del menú, con la ventana JOptionPane.YES_NO_OPTION
                         int op = JOptionPane.showConfirmDialog(null,
                                 "¿Deseas salir del menu?", "Salida del menú", JOptionPane.YES_NO_OPTION);
 
                         // System.out.println("Opcion: " + op); // Depuración
-                        
                         //Estructura if-else donde el usuario decidira si salir o no del menú
                         if (op == JOptionPane.YES_OPTION) {
                             // Quiere salir
@@ -319,7 +327,7 @@ public class AspiradoraRoomba {
                             System.out.println("Indique otra opcion:");
                         }
 
-                          //Si se cumple la condicion del while, el bucle se repetira, iniciando una nueva ejecución
+                        //Si se cumple la condicion del while, el bucle se repetira, iniciando una nueva ejecución
                     } while (repetir);
 
                 //SALIDA
@@ -338,7 +346,6 @@ public class AspiradoraRoomba {
                     "¿Deseas salir?", "Salida del programa", JOptionPane.YES_NO_OPTION);
 
             // System.out.println("Opcion: " + op); // Depuración
-            
             //Estructura if-else donde el usuario decidira si salir o no del programa
             if (op == JOptionPane.YES_OPTION) {
                 // Quiere salir
