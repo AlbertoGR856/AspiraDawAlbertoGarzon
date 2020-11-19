@@ -28,13 +28,12 @@ public class AspiradoraRoomba {
         int cocinaInt = 0, salonInt = 0, cuartoBanioInt = 0, dormitorioUnoInt = 0, dormitorioDosInt = 0;
 
         //Variable para establecer la carga de la bateria de tipo enttero e inicializada a 0 
-        //y otra variable de tipo double para la bateria actual
         int nivelBateria = 0;
-        double bateriaActual = 0;
 
         //Una constante de tipo double para establecer el gasto de bateria en el modo aspiración y fregado
         final double aspiracionMetroCuadrado = 1.50;
         final double aspiradoFregado = 2.25;
+        int metrosLimpiados = 0;
 
         //Variables de tipo entero para establecer las opciones de los distintos menus
         int opcionElegidaMenu;
@@ -143,12 +142,15 @@ public class AspiradoraRoomba {
                         null, "Ha entrado usted en Base de carga: Entrando en modo de carga de bateria "
                         + "espere hasta que la carga llegue al 100%");
 
-                for (bateriaActual = 0; bateriaActual < 100; bateriaActual++) {
+                for (nivelBateria = 0; nivelBateria < 100; nivelBateria++) {
 
                 }
 
                 JOptionPane.showMessageDialog(
-                        null, "Carga de la bateria completa: " + bateriaActual + " %");
+                        null, "Carga de la bateria completa: " + nivelBateria + " %");
+
+                JOptionPane.showMessageDialog(
+                        null, "El nivel de bateria es: " + nivelBateria + " %");
 
             }
 
@@ -158,6 +160,7 @@ public class AspiradoraRoomba {
 
             //MENU PRINCIPAL - CONFIGURAR Y SALIR
             //Se tendria que elegir una opcion que no se salga de los parametros establecidos
+            
             do {
 
                 String menu = JOptionPane.showInputDialog(null, "MENU ASPIRADORA \nEliga una opción:"
@@ -196,21 +199,27 @@ public class AspiradoraRoomba {
 
                             //COCINA
                             JOptionPane.showMessageDialog(
-                                    null, "Empezando por la cocina: " + cocinaInt);
+                                    null, "Empezando por la cocina: " + cocinaInt+ "m2");
 
-                            for (int i = 0; i > cocinaInt; i++) {
+                            for (int i = 0; i < cocinaInt; i++) {
 
-                                bateriaActual = nivelBateria - aspiracionMetroCuadrado;
+                                nivelBateria = (int) (nivelBateria - aspiracionMetroCuadrado);
+                                
+                                metrosLimpiados++;
 
                             }
+                            
 
                             JOptionPane.showMessageDialog(
-                                    null, "El nivel de bateria es: " + bateriaActual + " %");
+                                    null, "El nivel de bateria es: " + nivelBateria + " %");
+                            
+                             JOptionPane.showMessageDialog(
+                                    null, "Los metros limpiados son: " + metrosLimpiados + "m2");
 
                             JOptionPane.showMessageDialog(
                                     null, "La dependencia limpiada es la cocina");
 
-                            if (bateriaActual < 3) {
+                            if (nivelBateria < 3) {
 
                                 lugarParado = "Cocina";
 
@@ -245,12 +254,12 @@ public class AspiradoraRoomba {
                                         null, "Ha entrado usted en Base de carga: Entrando en modo de carga de bateria "
                                         + "espere hasta que la carga llegue al 100%");
 
-                                for (bateriaActual = 0; bateriaActual < 100; bateriaActual++) {
+                                for (nivelBateria = 0; nivelBateria < 100; nivelBateria++) {
 
                                 }
 
                                 JOptionPane.showMessageDialog(
-                                        null, "Carga de la bateria completa: " + bateriaActual + " %");
+                                        null, "Carga de la bateria completa: " + nivelBateria + " %");
 
                             }
 
@@ -258,19 +267,19 @@ public class AspiradoraRoomba {
                             JOptionPane.showMessageDialog(
                                     null, "Empezando por el salón: " + salonInt);
 
-                            for (int i = 0; i > salonInt; i++) {
+                            for (int i = 0; i < salonInt; i++) {
 
-                                bateriaActual = nivelBateria - aspiracionMetroCuadrado;
+                                nivelBateria = (int) (nivelBateria - aspiracionMetroCuadrado);
 
                             }
 
                             JOptionPane.showMessageDialog(
-                                    null, "El nivel de bateria es: " + bateriaActual + " %");
+                                    null, "El nivel de bateria es: " + nivelBateria + " %");
 
                             JOptionPane.showMessageDialog(
                                     null, "La dependencia limpiada es la cocina y el salón");
 
-                            if (bateriaActual < 3) {
+                            if (nivelBateria < 3) {
 
                                 lugarParado = "Salón";
 
@@ -304,12 +313,12 @@ public class AspiradoraRoomba {
                                         null, "Ha entrado usted en Base de carga: Entrando en modo de carga de bateria "
                                         + "espere hasta que la carga llegue al 100%");
 
-                                for (bateriaActual = 0; bateriaActual < 100; bateriaActual++) {
+                                for (nivelBateria = 0; nivelBateria < 100; nivelBateria++) {
 
                                 }
 
                                 JOptionPane.showMessageDialog(
-                                        null, "Carga de la bateria completa: " + bateriaActual + " %");
+                                        null, "Carga de la bateria completa: " + nivelBateria + " %");
 
                             }
 
@@ -317,16 +326,16 @@ public class AspiradoraRoomba {
                             JOptionPane.showMessageDialog(
                                     null, "Empezando por el cuarto de baño: " + cuartoBanioInt);
 
-                            for (int i = 0; i > cuartoBanioInt; i++) {
+                            for (int i = 0; i < cuartoBanioInt; i++) {
 
-                                bateriaActual = nivelBateria - aspiracionMetroCuadrado;
+                                nivelBateria = (int) (nivelBateria - aspiracionMetroCuadrado);
 
                             }
 
                             JOptionPane.showMessageDialog(
-                                    null, "El nivel de bateria es: " + bateriaActual + " %");
+                                    null, "El nivel de bateria es: " + nivelBateria + " %");
 
-                            if (bateriaActual < 3) {
+                            if (nivelBateria < 3) {
 
                                 lugarParado = "Cuarto de baño";
 
@@ -360,12 +369,12 @@ public class AspiradoraRoomba {
                                         null, "Ha entrado usted en Base de carga: Entrando en modo de carga de bateria "
                                         + "espere hasta que la carga llegue al 100%");
 
-                                for (bateriaActual = 0; bateriaActual < 100; bateriaActual++) {
+                                for (nivelBateria = 0; nivelBateria < 100; nivelBateria++) {
 
                                 }
 
                                 JOptionPane.showMessageDialog(
-                                        null, "Carga de la bateria completa: " + bateriaActual + " %");
+                                        null, "Carga de la bateria completa: " + nivelBateria + " %");
 
                             }
 
@@ -373,16 +382,16 @@ public class AspiradoraRoomba {
                             JOptionPane.showMessageDialog(
                                     null, "Empezando por el dormitorio 1: " + dormitorioUnoInt);
 
-                            for (int i = 0; i > dormitorioUnoInt; i++) {
+                            for (int i = 0; i < dormitorioUnoInt; i++) {
 
-                                bateriaActual = nivelBateria - aspiracionMetroCuadrado;
+                                nivelBateria = (int) (nivelBateria - aspiracionMetroCuadrado);
 
                             }
 
                             JOptionPane.showMessageDialog(
-                                    null, "El nivel de bateria es: " + bateriaActual + " %");
+                                    null, "El nivel de bateria es: " + nivelBateria + " %");
 
-                            if (bateriaActual < 3) {
+                            if (nivelBateria < 3) {
 
                                 lugarParado = "Dormitorio 1";
 
@@ -416,12 +425,12 @@ public class AspiradoraRoomba {
                                         null, "Ha entrado usted en Base de carga: Entrando en modo de carga de bateria "
                                         + "espere hasta que la carga llegue al 100%");
 
-                                for (bateriaActual = 0; bateriaActual < 100; bateriaActual++) {
+                                for (nivelBateria = 0; nivelBateria < 100; nivelBateria++) {
 
                                 }
 
                                 JOptionPane.showMessageDialog(
-                                        null, "Carga de la bateria completa: " + bateriaActual + " %");
+                                        null, "Carga de la bateria completa: " + nivelBateria + " %");
 
                             }
 
@@ -429,16 +438,16 @@ public class AspiradoraRoomba {
                             JOptionPane.showMessageDialog(
                                     null, "Empezando por el dormitorio 2: " + dormitorioDosInt);
 
-                            for (int i = 0; i > dormitorioDosInt; i++) {
+                            for (int i = 0; i < dormitorioDosInt; i++) {
 
-                                bateriaActual = nivelBateria - aspiracionMetroCuadrado;
+                                nivelBateria = (int) (nivelBateria - aspiracionMetroCuadrado);
 
                             }
 
                             JOptionPane.showMessageDialog(
-                                    null, "El nivel de bateria es: " + bateriaActual + " %");
+                                    null, "El nivel de bateria es: " + nivelBateria + " %");
 
-                            if (bateriaActual < 3) {
+                            if (nivelBateria < 3) {
 
                                 lugarParado = "Dormirtorio 2";
 
@@ -472,12 +481,12 @@ public class AspiradoraRoomba {
                                         null, "Ha entrado usted en Base de carga: Entrando en modo de carga de bateria "
                                         + "espere hasta que la carga llegue al 100%");
 
-                                for (bateriaActual = 0; bateriaActual < 100; bateriaActual++) {
+                                for (nivelBateria = 0; nivelBateria < 100; nivelBateria++) {
 
                                 }
 
                                 JOptionPane.showMessageDialog(
-                                        null, "Carga de la bateria completa: " + bateriaActual + " %");
+                                        null, "Carga de la bateria completa: " + nivelBateria + " %");
 
                             }
 
@@ -507,21 +516,21 @@ public class AspiradoraRoomba {
                                     JOptionPane.showMessageDialog(
                                             null, "Empezando por la cocina: " + cocinaInt);
 
-                                    for (int i = 0; i > cocinaInt; i++) {
+                                    for (int i = 0; i < cocinaInt; i++) {
 
-                                        bateriaActual = nivelBateria - aspiradoFregado;
+                                        nivelBateria = (int) (nivelBateria - aspiradoFregado);
 
                                     }
 
                                     lugarParado = "Cocina";
 
                                     JOptionPane.showMessageDialog(
-                                            null, "El nivel de bateria es: " + bateriaActual + " %");
+                                            null, "El nivel de bateria es: " + nivelBateria + " %");
 
                                     JOptionPane.showMessageDialog(
                                             null, "La dependencia limpiada es la cocina");
 
-                                    if (bateriaActual < 3) {
+                                    if (nivelBateria < 3) {
 
                                         lugarParado = "Cocina";
 
@@ -541,21 +550,21 @@ public class AspiradoraRoomba {
                                     JOptionPane.showMessageDialog(
                                             null, "Empezando por la cocina: " + salonInt);
 
-                                    for (int i = 0; i > salonInt; i++) {
+                                    for (int i = 0; i < salonInt; i++) {
 
-                                        bateriaActual = nivelBateria - aspiradoFregado;
+                                        nivelBateria = (int) (nivelBateria - aspiradoFregado);
 
                                     }
 
                                     lugarParado = "Salón";
 
                                     JOptionPane.showMessageDialog(
-                                            null, "El nivel de bateria es: " + bateriaActual + " %");
+                                            null, "El nivel de bateria es: " + nivelBateria + " %");
 
                                     JOptionPane.showMessageDialog(
                                             null, "La dependencia limpiada es el salón");
 
-                                    if (bateriaActual < 3) {
+                                    if (nivelBateria < 3) {
 
                                         lugarParado = "Salón";
 
@@ -575,21 +584,21 @@ public class AspiradoraRoomba {
                                     JOptionPane.showMessageDialog(
                                             null, "Empezando por la cocina: " + cuartoBanioInt);
 
-                                    for (int i = 0; i > cuartoBanioInt; i++) {
+                                    for (int i = 0; i < cuartoBanioInt; i++) {
 
-                                        bateriaActual = nivelBateria - aspiradoFregado;
+                                        nivelBateria = (int) (nivelBateria - aspiradoFregado);
 
                                     }
 
                                     lugarParado = "Cuarto de baño";
 
                                     JOptionPane.showMessageDialog(
-                                            null, "El nivel de bateria es: " + bateriaActual + " %");
+                                            null, "El nivel de bateria es: " + nivelBateria + " %");
 
                                     JOptionPane.showMessageDialog(
                                             null, "La dependencia limpiada es el cuarto de baño");
 
-                                    if (bateriaActual < 3) {
+                                    if (nivelBateria < 3) {
 
                                         lugarParado = "Cuarto de Baño";
 
@@ -609,21 +618,21 @@ public class AspiradoraRoomba {
                                     JOptionPane.showMessageDialog(
                                             null, "Empezando por el dormitorio 1: " + dormitorioUnoInt);
 
-                                    for (int i = 0; i > dormitorioUnoInt; i++) {
+                                    for (int i = 0; i < dormitorioUnoInt; i++) {
 
-                                        bateriaActual = nivelBateria - aspiradoFregado;
+                                        nivelBateria = (int) (nivelBateria - aspiradoFregado);
 
                                     }
 
                                     lugarParado = "Dormitorio 1";
 
                                     JOptionPane.showMessageDialog(
-                                            null, "El nivel de bateria es: " + bateriaActual + " %");
+                                            null, "El nivel de bateria es: " + nivelBateria + " %");
 
                                     JOptionPane.showMessageDialog(
                                             null, "La dependencia limpiada es el dormitorio 1");
 
-                                    if (bateriaActual < 3) {
+                                    if (nivelBateria < 3) {
 
                                         lugarParado = "Dormitorio 1";
 
@@ -643,21 +652,21 @@ public class AspiradoraRoomba {
                                     JOptionPane.showMessageDialog(
                                             null, "Empezando por la cocina: " + dormitorioDosInt);
 
-                                    for (int i = 0; i > dormitorioDosInt; i++) {
+                                    for (int i = 0; i < dormitorioDosInt; i++) {
 
-                                        bateriaActual = nivelBateria - aspiradoFregado;
+                                        nivelBateria = (int) (nivelBateria - aspiradoFregado);
 
                                     }
 
                                     lugarParado = "Dormitorio 2";
 
                                     JOptionPane.showMessageDialog(
-                                            null, "El nivel de bateria es: " + bateriaActual + " %");
+                                            null, "El nivel de bateria es: " + nivelBateria + " %");
 
                                     JOptionPane.showMessageDialog(
                                             null, "La dependencia limpiada es el dormitorio 2");
 
-                                    if (bateriaActual < 3) {
+                                    if (nivelBateria < 3) {
 
                                         lugarParado = "Dormitorio 2";
 
@@ -692,18 +701,18 @@ public class AspiradoraRoomba {
                             JOptionPane.showMessageDialog(
                                     null, "Empezando por la cocina: " + cocinaInt);
 
-                            for (int i = 0; i > cocinaInt; i++) {
+                            for (int i = 0; i < cocinaInt; i++) {
 
-                                bateriaActual = nivelBateria - aspiradoFregado;
+                                nivelBateria = (int) (nivelBateria - aspiradoFregado);
 
                             }
 
                             JOptionPane.showMessageDialog(
-                                    null, "El nivel de bateria es: " + bateriaActual + " %");
+                                    null, "El nivel de bateria es: " + nivelBateria + " %");
 
                             lugarParado = "Cocina";
 
-                            if (bateriaActual < 3) {
+                            if (nivelBateria < 3) {
 
                                 lugarParado = "Cocina";
 
@@ -734,12 +743,12 @@ public class AspiradoraRoomba {
                                         null, "Ha entrado usted en Base de carga: Entrando en modo de carga de bateria "
                                         + "espere hasta que la carga llegue al 100%");
 
-                                for (bateriaActual = 0; bateriaActual < 100; bateriaActual++) {
+                                for (nivelBateria = 0; nivelBateria < 100; nivelBateria++) {
 
                                 }
 
                                 JOptionPane.showMessageDialog(
-                                        null, "Carga de la bateria completa: " + bateriaActual + " %");
+                                        null, "Carga de la bateria completa: " + nivelBateria + " %");
 
                             }
 
@@ -747,18 +756,18 @@ public class AspiradoraRoomba {
                             JOptionPane.showMessageDialog(
                                     null, "Empezando por el salón: " + salonInt);
 
-                            for (int i = 0; i > salonInt; i++) {
+                            for (int i = 0; i < salonInt; i++) {
 
-                                bateriaActual = nivelBateria - aspiradoFregado;
+                                nivelBateria = (int) (nivelBateria - aspiradoFregado);
 
                             }
 
                             JOptionPane.showMessageDialog(
-                                    null, "El nivel de bateria es: " + bateriaActual + " %");
+                                    null, "El nivel de bateria es: " + nivelBateria + " %");
 
                             lugarParado = "Salón";
 
-                            if (bateriaActual < 3) {
+                            if (nivelBateria < 3) {
 
                                 lugarParado = "Salón";
 
@@ -789,12 +798,12 @@ public class AspiradoraRoomba {
                                         null, "Ha entrado usted en Base de carga: Entrando en modo de carga de bateria "
                                         + "espere hasta que la carga llegue al 100%");
 
-                                for (bateriaActual = 0; bateriaActual < 100; bateriaActual++) {
+                                for (nivelBateria = 0; nivelBateria < 100; nivelBateria++) {
 
                                 }
 
                                 JOptionPane.showMessageDialog(
-                                        null, "Carga de la bateria completa: " + bateriaActual + " %");
+                                        null, "Carga de la bateria completa: " + nivelBateria + " %");
 
                             }
 
@@ -802,18 +811,18 @@ public class AspiradoraRoomba {
                             JOptionPane.showMessageDialog(
                                     null, "Empezando por el cuarto de baño: " + cuartoBanioInt);
 
-                            for (int i = 0; i > cuartoBanioInt; i++) {
+                            for (int i = 0; i < cuartoBanioInt; i++) {
 
-                                bateriaActual = nivelBateria - aspiradoFregado;
+                                nivelBateria = (int) (nivelBateria - aspiradoFregado);
 
                             }
 
                             JOptionPane.showMessageDialog(
-                                    null, "El nivel de bateria es: " + bateriaActual + " %");
+                                    null, "El nivel de bateria es: " + nivelBateria + " %");
 
                             lugarParado = "Cuarto de baño";
 
-                            if (bateriaActual < 3) {
+                            if (nivelBateria < 3) {
 
                                 lugarParado = "Cuarto de baño";
 
@@ -844,12 +853,12 @@ public class AspiradoraRoomba {
                                         null, "Ha entrado usted en Base de carga: Entrando en modo de carga de bateria "
                                         + "espere hasta que la carga llegue al 100%");
 
-                                for (bateriaActual = 0; bateriaActual < 100; bateriaActual++) {
+                                for (nivelBateria = 0; nivelBateria < 100; nivelBateria++) {
 
                                 }
 
                                 JOptionPane.showMessageDialog(
-                                        null, "Carga de la bateria completa: " + bateriaActual + " %");
+                                        null, "Carga de la bateria completa: " + nivelBateria + " %");
 
                             }
 
@@ -857,18 +866,18 @@ public class AspiradoraRoomba {
                             JOptionPane.showMessageDialog(
                                     null, "Empezando por el dormitorio 1: " + dormitorioUnoInt);
 
-                            for (int i = 0; i > dormitorioUnoInt; i++) {
+                            for (int i = 0; i < dormitorioUnoInt; i++) {
 
-                                bateriaActual = nivelBateria - aspiradoFregado;
+                                nivelBateria = (int) (nivelBateria - aspiradoFregado);
 
                             }
 
                             JOptionPane.showMessageDialog(
-                                    null, "El nivel de bateria es: " + bateriaActual + " %");
+                                    null, "El nivel de bateria es: " + nivelBateria + " %");
 
                             lugarParado = "Dormitorio 1";
 
-                            if (bateriaActual < 3) {
+                            if (nivelBateria < 3) {
 
                                 lugarParado = "Dormitorio 1";
 
@@ -899,12 +908,12 @@ public class AspiradoraRoomba {
                                         null, "Ha entrado usted en Base de carga: Entrando en modo de carga de bateria "
                                         + "espere hasta que la carga llegue al 100%");
 
-                                for (bateriaActual = 0; bateriaActual < 100; bateriaActual++) {
+                                for (nivelBateria = 0; nivelBateria < 100; nivelBateria++) {
 
                                 }
 
                                 JOptionPane.showMessageDialog(
-                                        null, "Carga de la bateria completa: " + bateriaActual + " %");
+                                        null, "Carga de la bateria completa: " + nivelBateria + " %");
 
                             }
 
@@ -912,18 +921,18 @@ public class AspiradoraRoomba {
                             JOptionPane.showMessageDialog(
                                     null, "Empezando por el dormitorio 2: " + dormitorioDosInt);
 
-                            for (int i = 0; i > dormitorioDosInt; i++) {
+                            for (int i = 0; i < dormitorioDosInt; i++) {
 
-                                bateriaActual = nivelBateria - aspiradoFregado;
+                                nivelBateria = (int) (nivelBateria - aspiradoFregado);
 
                             }
 
                             JOptionPane.showMessageDialog(
-                                    null, "El nivel de bateria es: " + bateriaActual + " %");
+                                    null, "El nivel de bateria es: " + nivelBateria + " %");
 
                             lugarParado = "Dormitorio 2";
 
-                            if (bateriaActual < 3) {
+                            if (nivelBateria < 3) {
 
                                 lugarParado = "Dormitorio 2";
 
@@ -954,12 +963,12 @@ public class AspiradoraRoomba {
                                         null, "Ha entrado usted en Base de carga: Entrando en modo de carga de bateria "
                                         + "espere hasta que la carga llegue al 100%");
 
-                                for (bateriaActual = 0; bateriaActual < 100; bateriaActual++) {
+                                for (nivelBateria = 0; nivelBateria < 100; nivelBateria++) {
 
                                 }
 
                                 JOptionPane.showMessageDialog(
-                                        null, "Carga de la bateria completa: " + bateriaActual + " %");
+                                        null, "Carga de la bateria completa: " + nivelBateria + " %");
 
                             }
 
@@ -967,6 +976,27 @@ public class AspiradoraRoomba {
 
                         //Si se cumple la condicion del while, se repite el bucle
                     } while (opcionModo < 0 || opcionModo > 3);
+
+                    
+                    
+                    //BASE CARGA
+                    if (nivelBateria < 3) {
+
+                        JOptionPane.showMessageDialog(
+                                null, "Ha entrado usted en Base de carga: Entrando en modo de carga de bateria "
+                                + "espere hasta que la carga llegue al 100%");
+
+                        for (nivelBateria = 0; nivelBateria < 100; nivelBateria++) {
+
+                        }
+
+                        JOptionPane.showMessageDialog(
+                                null, "Carga de la bateria completa: " + nivelBateria + " %");
+
+                        JOptionPane.showMessageDialog(
+                                null, "El nivel de bateria es: " + nivelBateria + " %");
+
+                    }
 
                     //MENU CARACTERISTICAS
                     do {
@@ -1048,7 +1078,7 @@ public class AspiradoraRoomba {
                         if (op == JOptionPane.YES_OPTION) {
                             // Quiere salir
                             System.out.println("Saliendo del menú...."); // Depuración
-                            repetir = false; // Condición de parada del programa
+                            repetir = false; // Con11dición de parada del programa
 
                         } else {
 
