@@ -182,411 +182,400 @@ public class AspiradoraRoomba {
                     //MODOS DE USO
                     do {
 
-                        String menuModo = JOptionPane.showInputDialog(null, "MENU MODO\nEliga una opción:\n1.- Modo completo"
-                                + "\n2.- Modo dependencias\n"
-                                + "3.- Aspirado y fregado\n"
-                                + "4.- Salir del menú");
-                        //Recoger una variable por consola
-                        opcionModo = Integer.parseInt(menuModo);
+                        do {
 
-                        if (opcionModo == 1) {
+                            String menuModo = JOptionPane.showInputDialog(null, "MENU MODO\nEliga una opción:\n1.- Modo completo"
+                                    + "\n2.- Modo dependencias\n"
+                                    + "3.- Aspirado y fregado\n"
+                                    + "4.- Salir del menú");
+                            //Recoger una variable por consola
+                            opcionModo = Integer.parseInt(menuModo);
 
-                            JOptionPane.showMessageDialog(
-                                    null, "Ha entrado usted en Modo completo");
+                            if (opcionModo == 1) {
 
-                            JOptionPane.showMessageDialog(
-                                    null, "El nivel de bateria es: " + nivelBateria + " %");
+                                JOptionPane.showMessageDialog(
+                                        null, "Ha entrado usted en Modo completo");
 
-                            //COCINA
-                            JOptionPane.showMessageDialog(
-                                    null, "Empezando por la cocina: " + cocinaInt + "m2");
+                                JOptionPane.showMessageDialog(
+                                        null, "El nivel de bateria es: " + nivelBateria + " %");
 
-                            for (int i = 0; i < cocinaInt; i++) {
+                                //COCINA
+                                JOptionPane.showMessageDialog(
+                                        null, "Empezando por la cocina: " + cocinaInt + "m2");
 
-                                nivelBateria = (int) (nivelBateria - aspiracionMetroCuadrado);
+                                for (int i = 0; i < cocinaInt; i++) {
 
-                                metrosLimpiados++;
+                                    nivelBateria = (int) (nivelBateria - aspiracionMetroCuadrado);
 
-                            }
+                                    metrosLimpiados++;
 
-                            JOptionPane.showMessageDialog(
-                                    null, "El nivel de bateria es: " + nivelBateria + " %");
+                                }
 
-                            JOptionPane.showMessageDialog(
-                                    null, "Los metros limpiados son: " + metrosLimpiados + "m2");
-
-                            JOptionPane.showMessageDialog(
-                                    null, "La dependencia limpiada es la cocina");
-
-                            if (nivelBateria < 3) {
-
-                                lugarParado = "Cocina";
+                                JOptionPane.showMessageDialog(
+                                        null, "El nivel de bateria es: " + nivelBateria + " %");
 
                                 JOptionPane.showMessageDialog(
                                         null, "Los metros limpiados son: " + metrosLimpiados + "m2");
-
-                                JOptionPane.showMessageDialog(
-                                        null, "El nivel de bateria es insuficiente, la aspiradora se ha parado");
 
                                 JOptionPane.showMessageDialog(
                                         null, "La dependencia limpiada es la cocina");
 
-                                do {
-                                    //Se pregunta al usuario si quiere salir del programa, con la ventana JOptionPane.YES_NO_OPTION
-                                    int op = JOptionPane.showConfirmDialog(null,
-                                            "¿Deseas salir?", "Salida del programa", JOptionPane.YES_NO_OPTION);
-
-                                    //Estructura if-else donde el usuario decidira si salir o no del menú
-                                    if (op == JOptionPane.YES_OPTION) {
-                                        // Quiere salir
-                                        JOptionPane.showMessageDialog(
-                                                null, "Saliendo del menú...."); // Depuración
-                                        repetir = false; // Condición de parada del programa
-
-                                    } else {
-
-                                    }
-                                } while (repetir);
-
-                                JOptionPane.showMessageDialog(
-                                        null, "La dependencia limpiada es la cocina");
-
-                                //BASE CARGA
-                                JOptionPane.showMessageDialog(
-                                        null, "Ha entrado usted en Base de carga: Entrando en modo de carga de bateria "
-                                        + "espere hasta que la carga llegue al 100%");
-
-                                for (nivelBateria = 0; nivelBateria < 100; nivelBateria++) {
-
-                                }
-
-                                JOptionPane.showMessageDialog(
-                                        null, "Carga de la bateria completa: " + nivelBateria + " %");
-
-                            }
-
-                            //SALON
-                            JOptionPane.showMessageDialog(
-                                    null, "Empezando por el salón: " + salonInt + "m2");
-
-                            for (int i = 0; i < salonInt; i++) {
-
-                                nivelBateria = (int) (nivelBateria - aspiracionMetroCuadrado);
-
-                                metrosLimpiados++;
-
-                            }
-
-                            JOptionPane.showMessageDialog(
-                                    null, "El nivel de bateria es: " + nivelBateria + " %");
-
-                            JOptionPane.showMessageDialog(
-                                    null, "Los metros limpiados son: " + metrosLimpiados + "m2");
-
-                            JOptionPane.showMessageDialog(
-                                    null, "La dependencia limpiada es la cocina y el salón");
-
-                            if (nivelBateria < 3) {
-
-                                lugarParado = "Salón";
-
-                                JOptionPane.showMessageDialog(
-                                        null, "Los metros limpiados son: " + metrosLimpiados + "m2");
-
-                                JOptionPane.showMessageDialog(
-                                        null, "El nivel de bateria es insuficiente, la aspiradora se ha parado");
-
-                                lugarParado = "Salón";
-
-                                do {
-                                    //Se pregunta al usuario si quiere salir del programa, con la ventana JOptionPane.YES_NO_OPTION
-                                    int op = JOptionPane.showConfirmDialog(null,
-                                            "¿Deseas salir?", "Salida del programa", JOptionPane.YES_NO_OPTION);
-
-                                    //Estructura if-else donde el usuario decidira si salir o no del menú
-                                    if (op == JOptionPane.YES_OPTION) {
-                                        // Quiere salir
-                                        JOptionPane.showMessageDialog(
-                                                null, "Saliendo del menú...."); // Depuración
-                                        repetir = false; // Condición de parada del programa
-
-                                    } else {
-
-                                    }
-                                } while (repetir);
-
-                                JOptionPane.showMessageDialog(
-                                        null, "La dependencia limpiada es la cocina y el salón");
-
-                                //BASE CARGA
-                                JOptionPane.showMessageDialog(
-                                        null, "Ha entrado usted en Base de carga: Entrando en modo de carga de bateria "
-                                        + "espere hasta que la carga llegue al 100%");
-
-                                for (nivelBateria = 0; nivelBateria < 100; nivelBateria++) {
-
-                                }
-
-                                JOptionPane.showMessageDialog(
-                                        null, "Carga de la bateria completa: " + nivelBateria + " %");
-
-                            }
-
-                            //CUARTO DE BAÑO
-                            JOptionPane.showMessageDialog(
-                                    null, "Empezando por el cuarto de baño: " + cuartoBanioInt + "m2");
-
-                            for (int i = 0; i < cuartoBanioInt; i++) {
-
-                                nivelBateria = (int) (nivelBateria - aspiracionMetroCuadrado);
-
-                                metrosLimpiados++;
-
-                            }
-
-                            JOptionPane.showMessageDialog(
-                                    null, "El nivel de bateria es: " + nivelBateria + " %");
-
-                            JOptionPane.showMessageDialog(
-                                    null, "Los metros limpiados son: " + metrosLimpiados + "m2");
-
-                            JOptionPane.showMessageDialog(
-                                    null, "La dependencia limpiada es la cocina, el salón y el cuarto de baño");
-
-                            if (nivelBateria < 3) {
-
-                                lugarParado = "Cuarto de baño";
-
-                                JOptionPane.showMessageDialog(
-                                        null, "Los metros limpiados son: " + metrosLimpiados + "m2");
-
-                                JOptionPane.showMessageDialog(
-                                        null, "Los metros limpiados son: " + metrosLimpiados + "m2");
-
-                                JOptionPane.showMessageDialog(
-                                        null, "El nivel de bateria es insuficiente, la aspiradora se ha parado");
-
-                                JOptionPane.showMessageDialog(
-                                        null, "La dependencia limpiada es la cocina, el salon y el cuarto de baño");
-                                do {
-                                    //Se pregunta al usuario si quiere salir del programa, con la ventana JOptionPane.YES_NO_OPTION
-                                    int op = JOptionPane.showConfirmDialog(null,
-                                            "¿Deseas salir?", "Salida del programa", JOptionPane.YES_NO_OPTION);
-
-                                    //Estructura if-else donde el usuario decidira si salir o no del menú
-                                    if (op == JOptionPane.YES_OPTION) {
-                                        // Quiere salir
-                                        JOptionPane.showMessageDialog(
-                                                null, "Saliendo del menú...."); // Depuración
-                                        repetir = false; // Condición de parada del programa
-
-                                    } else {
-
-                                    }
-                                } while (repetir);
-
-                                JOptionPane.showMessageDialog(
-                                        null, "La dependencia limpiada es la cocina, el salon y el cuarto de baño");
-
-                                //BASE CARGA
-                                JOptionPane.showMessageDialog(
-                                        null, "Ha entrado usted en Base de carga: Entrando en modo de carga de bateria "
-                                        + "espere hasta que la carga llegue al 100%");
-
-                                for (nivelBateria = 0; nivelBateria < 100; nivelBateria++) {
-
-                                }
-
-                                JOptionPane.showMessageDialog(
-                                        null, "Carga de la bateria completa: " + nivelBateria + " %");
-
-                            }
-
-                            //Dormitorio 1
-                            JOptionPane.showMessageDialog(
-                                    null, "Empezando por el dormitorio 1: " + dormitorioUnoInt);
-
-                            for (int i = 0; i < dormitorioUnoInt; i++) {
-
-                                nivelBateria = (int) (nivelBateria - aspiracionMetroCuadrado);
-
-                                metrosLimpiados++;
-
-                            }
-
-                            JOptionPane.showMessageDialog(
-                                    null, "El nivel de bateria es: " + nivelBateria + " %");
-
-                            JOptionPane.showMessageDialog(
-                                    null, "Los metros limpiados son: " + metrosLimpiados + "m2");
-
-                            JOptionPane.showMessageDialog(
-                                    null, "La dependencia limpiada es la cocina, el salon, el cuarto de baño y el dormitorio 1");
-
-                            if (nivelBateria < 3) {
-
-                                lugarParado = "Dormitorio 1";
-
-                                JOptionPane.showMessageDialog(
-                                        null, "Los metros limpiados son: " + metrosLimpiados + "m2");
-
-                                JOptionPane.showMessageDialog(
-                                        null, "El nivel de bateria es insuficiente, la aspiradora se ha parado");
-
-                                JOptionPane.showMessageDialog(
-                                        null, "La dependencia limpiada es la cocina, el salon, el cuarto de baño y el dormitorio 1");
-                                do {
-                                    //Se pregunta al usuario si quiere salir del programa, con la ventana JOptionPane.YES_NO_OPTION
-                                    int op = JOptionPane.showConfirmDialog(null,
-                                            "¿Deseas salir?", "Salida del programa", JOptionPane.YES_NO_OPTION);
-
-                                    //Estructura if-else donde el usuario decidira si salir o no del menú
-                                    if (op == JOptionPane.YES_OPTION) {
-                                        // Quiere salir
-                                        JOptionPane.showMessageDialog(
-                                                null, "Saliendo del menú...."); // Depuración
-                                        repetir = false; // Condición de parada del programa
-
-                                    } else {
-
-                                    }
-                                } while (repetir);
-
-                                JOptionPane.showMessageDialog(
-                                        null, "La dependencia limpiada es la cocina, el salon, el cuarto de baño y el dormitorio 1");
-
-                                //BASE CARGA
-                                JOptionPane.showMessageDialog(
-                                        null, "Ha entrado usted en Base de carga: Entrando en modo de carga de bateria "
-                                        + "espere hasta que la carga llegue al 100%");
-
-                                for (nivelBateria = 0; nivelBateria < 100; nivelBateria++) {
-
-                                }
-
-                                JOptionPane.showMessageDialog(
-                                        null, "Carga de la bateria completa: " + nivelBateria + " %");
-
-                            }
-
-                            //Dormitorio 2
-                            JOptionPane.showMessageDialog(
-                                    null, "Empezando por el dormitorio 2: " + dormitorioDosInt);
-
-                            for (int i = 0; i < dormitorioDosInt; i++) {
-
-                                nivelBateria = (int) (nivelBateria - aspiracionMetroCuadrado);
-
-                                metrosLimpiados++;
-
-                            }
-
-                            JOptionPane.showMessageDialog(
-                                    null, "El nivel de bateria es: " + nivelBateria + " %");
-
-                            JOptionPane.showMessageDialog(
-                                    null, "Los metros limpiados son: " + metrosLimpiados + "m2");
-
-                            JOptionPane.showMessageDialog(
-                                    null, "La dependencia limpiada es la cocina, el salon, el cuarto de baño, el dormitorio 1 y el dormitorio 2");
-
-                            if (nivelBateria < 3) {
-
-                                lugarParado = "Dormirtorio 2";
-
-                                JOptionPane.showMessageDialog(
-                                        null, "Los metros limpiados son: " + metrosLimpiados + "m2");
-
-                                JOptionPane.showMessageDialog(
-                                        null, "El nivel de bateria es insuficiente, la aspiradora se ha parado");
-
-                                JOptionPane.showMessageDialog(
-                                        null, "La dependencia limpiada es la cocina, el salon, el cuarto de baño, el dormitorio 1 y el dormitorio 2");
-                                do {
-                                    //Se pregunta al usuario si quiere salir del programa, con la ventana JOptionPane.YES_NO_OPTION
-                                    int op = JOptionPane.showConfirmDialog(null,
-                                            "¿Deseas salir?", "Salida del programa", JOptionPane.YES_NO_OPTION);
-
-                                    //Estructura if-else donde el usuario decidira si salir o no del menú
-                                    if (op == JOptionPane.YES_OPTION) {
-                                        // Quiere salir
-                                        JOptionPane.showMessageDialog(
-                                                null, "Saliendo del menú...."); // Depuración
-                                        repetir = false; // Condición de parada del programa
-
-                                    } else {
-
-                                    }
-                                } while (repetir);
-
-                                JOptionPane.showMessageDialog(
-                                        null, "La dependencia limpiada es la cocina, el salon, el cuarto de baño, el dormitorio 1 y el dormitorio 2");
-
-                                //BASE CARGA
-                                JOptionPane.showMessageDialog(
-                                        null, "Ha entrado usted en Base de carga: Entrando en modo de carga de bateria "
-                                        + "espere hasta que la carga llegue al 100%");
-
-                                for (nivelBateria = 0; nivelBateria < 100; nivelBateria++) {
-
-                                }
-
-                                JOptionPane.showMessageDialog(
-                                        null, "Carga de la bateria completa: " + nivelBateria + " %");
-
-                            }
-
-                        } else if (opcionModo == 2) {
-
-                            JOptionPane.showMessageDialog(
-                                    null, "Ha entrado usted en Modo dependencias");
-
-                            do {
-
-                                String menu = JOptionPane.showInputDialog(null, "MENU HABITACIONES \nEliga una opción:"
-                                        + "\n1.- Cocina\n"
-                                        + "2.- Salón\n"
-                                        + "3.- Cuarto de baño\n"
-                                        + "4.- Dormitorio 1\n"
-                                        + "5.- Dormitorio 2\n");
-                                //Recoger una variable por consola
-                                menuHabitaciones = Integer.parseInt(menu);
-
-                            } while (menuHabitaciones < 0 || menuHabitaciones > 5);
-
-                            switch (menuHabitaciones) {
-
-                                case 1:
-
-                                    //COCINA
-                                    JOptionPane.showMessageDialog(
-                                            null, "Empezando por la cocina: " + cocinaInt + "m2");
-
-                                    for (int i = 0; i < cocinaInt; i++) {
-
-                                        nivelBateria = (int) (nivelBateria - aspiradoFregado);
-
-                                        metrosLimpiados++;
-
-                                    }
+                                if (nivelBateria < 3) {
 
                                     lugarParado = "Cocina";
-
-                                    JOptionPane.showMessageDialog(
-                                            null, "El nivel de bateria es: " + nivelBateria + " %");
 
                                     JOptionPane.showMessageDialog(
                                             null, "Los metros limpiados son: " + metrosLimpiados + "m2");
 
                                     JOptionPane.showMessageDialog(
+                                            null, "El nivel de bateria es insuficiente, la aspiradora se ha parado");
+
+                                    JOptionPane.showMessageDialog(
                                             null, "La dependencia limpiada es la cocina");
 
-                                    if (nivelBateria < 3) {
+                                    do {
+                                        //Se pregunta al usuario si quiere salir del programa, con la ventana JOptionPane.YES_NO_OPTION
+                                        int op = JOptionPane.showConfirmDialog(null,
+                                                "¿Deseas salir?", "Salida del programa", JOptionPane.YES_NO_OPTION);
+
+                                        //Estructura if-else donde el usuario decidira si salir o no del menú
+                                        if (op == JOptionPane.YES_OPTION) {
+                                            // Quiere salir
+                                            JOptionPane.showMessageDialog(
+                                                    null, "Saliendo del menú...."); // Depuración
+                                            repetir = false; // Condición de parada del programa
+
+                                        } else {
+
+                                        }
+                                    } while (repetir);
+
+                                    JOptionPane.showMessageDialog(
+                                            null, "La dependencia limpiada es la cocina");
+
+                                    //BASE CARGA
+                                    JOptionPane.showMessageDialog(
+                                            null, "Ha entrado usted en Base de carga: Entrando en modo de carga de bateria "
+                                            + "espere hasta que la carga llegue al 100%");
+
+                                    for (nivelBateria = 0; nivelBateria < 100; nivelBateria++) {
+
+                                    }
+
+                                    JOptionPane.showMessageDialog(
+                                            null, "Carga de la bateria completa: " + nivelBateria + " %");
+
+                                }
+
+                                //SALON
+                                JOptionPane.showMessageDialog(
+                                        null, "Empezando por el salón: " + salonInt + "m2");
+
+                                for (int i = 0; i < salonInt; i++) {
+
+                                    nivelBateria = (int) (nivelBateria - aspiracionMetroCuadrado);
+
+                                    metrosLimpiados++;
+
+                                }
+
+                                JOptionPane.showMessageDialog(
+                                        null, "El nivel de bateria es: " + nivelBateria + " %");
+
+                                JOptionPane.showMessageDialog(
+                                        null, "Los metros limpiados son: " + metrosLimpiados + "m2");
+
+                                JOptionPane.showMessageDialog(
+                                        null, "La dependencia limpiada es la cocina y el salón");
+
+                                if (nivelBateria < 3) {
+
+                                    lugarParado = "Salón";
+
+                                    JOptionPane.showMessageDialog(
+                                            null, "Los metros limpiados son: " + metrosLimpiados + "m2");
+
+                                    JOptionPane.showMessageDialog(
+                                            null, "El nivel de bateria es insuficiente, la aspiradora se ha parado");
+
+                                    lugarParado = "Salón";
+
+                                    do {
+                                        //Se pregunta al usuario si quiere salir del programa, con la ventana JOptionPane.YES_NO_OPTION
+                                        int op = JOptionPane.showConfirmDialog(null,
+                                                "¿Deseas salir?", "Salida del programa", JOptionPane.YES_NO_OPTION);
+
+                                        //Estructura if-else donde el usuario decidira si salir o no del menú
+                                        if (op == JOptionPane.YES_OPTION) {
+                                            // Quiere salir
+                                            JOptionPane.showMessageDialog(
+                                                    null, "Saliendo del menú...."); // Depuración
+                                            repetir = false; // Condición de parada del programa
+
+                                        } else {
+
+                                        }
+                                    } while (repetir);
+
+                                    JOptionPane.showMessageDialog(
+                                            null, "La dependencia limpiada es la cocina y el salón");
+
+                                    //BASE CARGA
+                                    JOptionPane.showMessageDialog(
+                                            null, "Ha entrado usted en Base de carga: Entrando en modo de carga de bateria "
+                                            + "espere hasta que la carga llegue al 100%");
+
+                                    for (nivelBateria = 0; nivelBateria < 100; nivelBateria++) {
+
+                                    }
+
+                                    JOptionPane.showMessageDialog(
+                                            null, "Carga de la bateria completa: " + nivelBateria + " %");
+
+                                }
+
+                                //CUARTO DE BAÑO
+                                JOptionPane.showMessageDialog(
+                                        null, "Empezando por el cuarto de baño: " + cuartoBanioInt + "m2");
+
+                                for (int i = 0; i < cuartoBanioInt; i++) {
+
+                                    nivelBateria = (int) (nivelBateria - aspiracionMetroCuadrado);
+
+                                    metrosLimpiados++;
+
+                                }
+
+                                JOptionPane.showMessageDialog(
+                                        null, "El nivel de bateria es: " + nivelBateria + " %");
+
+                                JOptionPane.showMessageDialog(
+                                        null, "Los metros limpiados son: " + metrosLimpiados + "m2");
+
+                                JOptionPane.showMessageDialog(
+                                        null, "La dependencia limpiada es la cocina, el salón y el cuarto de baño");
+
+                                if (nivelBateria < 3) {
+
+                                    lugarParado = "Cuarto de baño";
+
+                                    JOptionPane.showMessageDialog(
+                                            null, "Los metros limpiados son: " + metrosLimpiados + "m2");
+
+                                    JOptionPane.showMessageDialog(
+                                            null, "Los metros limpiados son: " + metrosLimpiados + "m2");
+
+                                    JOptionPane.showMessageDialog(
+                                            null, "El nivel de bateria es insuficiente, la aspiradora se ha parado");
+
+                                    JOptionPane.showMessageDialog(
+                                            null, "La dependencia limpiada es la cocina, el salon y el cuarto de baño");
+                                    do {
+                                        //Se pregunta al usuario si quiere salir del programa, con la ventana JOptionPane.YES_NO_OPTION
+                                        int op = JOptionPane.showConfirmDialog(null,
+                                                "¿Deseas salir?", "Salida del programa", JOptionPane.YES_NO_OPTION);
+
+                                        //Estructura if-else donde el usuario decidira si salir o no del menú
+                                        if (op == JOptionPane.YES_OPTION) {
+                                            // Quiere salir
+                                            JOptionPane.showMessageDialog(
+                                                    null, "Saliendo del menú...."); // Depuración
+                                            repetir = false; // Condición de parada del programa
+
+                                        } else {
+
+                                        }
+                                    } while (repetir);
+
+                                    JOptionPane.showMessageDialog(
+                                            null, "La dependencia limpiada es la cocina, el salon y el cuarto de baño");
+
+                                    //BASE CARGA
+                                    JOptionPane.showMessageDialog(
+                                            null, "Ha entrado usted en Base de carga: Entrando en modo de carga de bateria "
+                                            + "espere hasta que la carga llegue al 100%");
+
+                                    for (nivelBateria = 0; nivelBateria < 100; nivelBateria++) {
+
+                                    }
+
+                                    JOptionPane.showMessageDialog(
+                                            null, "Carga de la bateria completa: " + nivelBateria + " %");
+
+                                }
+
+                                //Dormitorio 1
+                                JOptionPane.showMessageDialog(
+                                        null, "Empezando por el dormitorio 1: " + dormitorioUnoInt);
+
+                                for (int i = 0; i < dormitorioUnoInt; i++) {
+
+                                    nivelBateria = (int) (nivelBateria - aspiracionMetroCuadrado);
+
+                                    metrosLimpiados++;
+
+                                }
+
+                                JOptionPane.showMessageDialog(
+                                        null, "El nivel de bateria es: " + nivelBateria + " %");
+
+                                JOptionPane.showMessageDialog(
+                                        null, "Los metros limpiados son: " + metrosLimpiados + "m2");
+
+                                JOptionPane.showMessageDialog(
+                                        null, "La dependencia limpiada es la cocina, el salon, el cuarto de baño y el dormitorio 1");
+
+                                if (nivelBateria < 3) {
+
+                                    lugarParado = "Dormitorio 1";
+
+                                    JOptionPane.showMessageDialog(
+                                            null, "Los metros limpiados son: " + metrosLimpiados + "m2");
+
+                                    JOptionPane.showMessageDialog(
+                                            null, "El nivel de bateria es insuficiente, la aspiradora se ha parado");
+
+                                    JOptionPane.showMessageDialog(
+                                            null, "La dependencia limpiada es la cocina, el salon, el cuarto de baño y el dormitorio 1");
+                                    do {
+                                        //Se pregunta al usuario si quiere salir del programa, con la ventana JOptionPane.YES_NO_OPTION
+                                        int op = JOptionPane.showConfirmDialog(null,
+                                                "¿Deseas salir?", "Salida del programa", JOptionPane.YES_NO_OPTION);
+
+                                        //Estructura if-else donde el usuario decidira si salir o no del menú
+                                        if (op == JOptionPane.YES_OPTION) {
+                                            // Quiere salir
+                                            JOptionPane.showMessageDialog(
+                                                    null, "Saliendo del menú...."); // Depuración
+                                            repetir = false; // Condición de parada del programa
+
+                                        } else {
+
+                                        }
+                                    } while (repetir);
+
+                                    JOptionPane.showMessageDialog(
+                                            null, "La dependencia limpiada es la cocina, el salon, el cuarto de baño y el dormitorio 1");
+
+                                    //BASE CARGA
+                                    JOptionPane.showMessageDialog(
+                                            null, "Ha entrado usted en Base de carga: Entrando en modo de carga de bateria "
+                                            + "espere hasta que la carga llegue al 100%");
+
+                                    for (nivelBateria = 0; nivelBateria < 100; nivelBateria++) {
+
+                                    }
+
+                                    JOptionPane.showMessageDialog(
+                                            null, "Carga de la bateria completa: " + nivelBateria + " %");
+
+                                }
+
+                                //Dormitorio 2
+                                JOptionPane.showMessageDialog(
+                                        null, "Empezando por el dormitorio 2: " + dormitorioDosInt);
+
+                                for (int i = 0; i < dormitorioDosInt; i++) {
+
+                                    nivelBateria = (int) (nivelBateria - aspiracionMetroCuadrado);
+
+                                    metrosLimpiados++;
+
+                                }
+
+                                JOptionPane.showMessageDialog(
+                                        null, "El nivel de bateria es: " + nivelBateria + " %");
+
+                                JOptionPane.showMessageDialog(
+                                        null, "Los metros limpiados son: " + metrosLimpiados + "m2");
+
+                                JOptionPane.showMessageDialog(
+                                        null, "La dependencia limpiada es la cocina, el salon, el cuarto de baño, el dormitorio 1 y el dormitorio 2");
+
+                                if (nivelBateria < 3) {
+
+                                    lugarParado = "Dormirtorio 2";
+
+                                    JOptionPane.showMessageDialog(
+                                            null, "Los metros limpiados son: " + metrosLimpiados + "m2");
+
+                                    JOptionPane.showMessageDialog(
+                                            null, "El nivel de bateria es insuficiente, la aspiradora se ha parado");
+
+                                    JOptionPane.showMessageDialog(
+                                            null, "La dependencia limpiada es la cocina, el salon, el cuarto de baño, el dormitorio 1 y el dormitorio 2");
+                                    do {
+                                        //Se pregunta al usuario si quiere salir del programa, con la ventana JOptionPane.YES_NO_OPTION
+                                        int op = JOptionPane.showConfirmDialog(null,
+                                                "¿Deseas salir?", "Salida del programa", JOptionPane.YES_NO_OPTION);
+
+                                        //Estructura if-else donde el usuario decidira si salir o no del menú
+                                        if (op == JOptionPane.YES_OPTION) {
+                                            // Quiere salir
+                                            JOptionPane.showMessageDialog(
+                                                    null, "Saliendo del menú...."); // Depuración
+                                            repetir = false; // Condición de parada del programa
+
+                                        } else {
+
+                                        }
+                                    } while (repetir);
+
+                                    JOptionPane.showMessageDialog(
+                                            null, "La dependencia limpiada es la cocina, el salon, el cuarto de baño, el dormitorio 1 y el dormitorio 2");
+
+                                    //BASE CARGA
+                                    JOptionPane.showMessageDialog(
+                                            null, "Ha entrado usted en Base de carga: Entrando en modo de carga de bateria "
+                                            + "espere hasta que la carga llegue al 100%");
+
+                                    for (nivelBateria = 0; nivelBateria < 100; nivelBateria++) {
+
+                                    }
+
+                                    JOptionPane.showMessageDialog(
+                                            null, "Carga de la bateria completa: " + nivelBateria + " %");
+
+                                }
+
+                            } else if (opcionModo == 2) {
+
+                                JOptionPane.showMessageDialog(
+                                        null, "Ha entrado usted en Modo dependencias");
+
+                                do {
+
+                                    String menu = JOptionPane.showInputDialog(null, "MENU HABITACIONES \nEliga una opción:"
+                                            + "\n1.- Cocina\n"
+                                            + "2.- Salón\n"
+                                            + "3.- Cuarto de baño\n"
+                                            + "4.- Dormitorio 1\n"
+                                            + "5.- Dormitorio 2\n");
+                                    //Recoger una variable por consola
+                                    menuHabitaciones = Integer.parseInt(menu);
+
+                                } while (menuHabitaciones < 0 || menuHabitaciones > 5);
+
+                                switch (menuHabitaciones) {
+
+                                    case 1:
+
+                                        //COCINA
+                                        JOptionPane.showMessageDialog(
+                                                null, "Empezando por la cocina: " + cocinaInt + "m2");
+
+                                        for (int i = 0; i < cocinaInt; i++) {
+
+                                            nivelBateria = (int) (nivelBateria - aspiradoFregado);
+
+                                            metrosLimpiados++;
+
+                                        }
 
                                         lugarParado = "Cocina";
 
                                         JOptionPane.showMessageDialog(
-                                                null, "El nivel de bateria es insuficiente, la aspiradora se ha parado");
+                                                null, "El nivel de bateria es: " + nivelBateria + " %");
 
                                         JOptionPane.showMessageDialog(
                                                 null, "Los metros limpiados son: " + metrosLimpiados + "m2");
@@ -594,589 +583,622 @@ public class AspiradoraRoomba {
                                         JOptionPane.showMessageDialog(
                                                 null, "La dependencia limpiada es la cocina");
 
-                                        //BASE CARGA
-                                        JOptionPane.showMessageDialog(
-                                                null, "Ha entrado usted en Base de carga: Entrando en modo de carga de bateria "
-                                                + "espere hasta que la carga llegue al 100%");
+                                        if (nivelBateria < 3) {
 
-                                        for (nivelBateria = 0; nivelBateria < 100; nivelBateria++) {
+                                            lugarParado = "Cocina";
+
+                                            JOptionPane.showMessageDialog(
+                                                    null, "El nivel de bateria es insuficiente, la aspiradora se ha parado");
+
+                                            JOptionPane.showMessageDialog(
+                                                    null, "Los metros limpiados son: " + metrosLimpiados + "m2");
+
+                                            JOptionPane.showMessageDialog(
+                                                    null, "La dependencia limpiada es la cocina");
+
+                                            //BASE CARGA
+                                            JOptionPane.showMessageDialog(
+                                                    null, "Ha entrado usted en Base de carga: Entrando en modo de carga de bateria "
+                                                    + "espere hasta que la carga llegue al 100%");
+
+                                            for (nivelBateria = 0; nivelBateria < 100; nivelBateria++) {
+
+                                            }
+
+                                            JOptionPane.showMessageDialog(
+                                                    null, "Carga de la bateria completa: " + nivelBateria + " %");
+
+                                            JOptionPane.showMessageDialog(
+                                                    null, "El nivel de bateria es: " + nivelBateria + " %");
 
                                         }
 
+                                        break;
+
+                                    case 2:
+
+                                        //SALON
                                         JOptionPane.showMessageDialog(
-                                                null, "Carga de la bateria completa: " + nivelBateria + " %");
+                                                null, "Empezando por la cocina: " + salonInt + "m2");
 
-                                        JOptionPane.showMessageDialog(
-                                                null, "El nivel de bateria es: " + nivelBateria + " %");
+                                        for (int i = 0; i < salonInt; i++) {
 
-                                    }
+                                            nivelBateria = (int) (nivelBateria - aspiradoFregado);
 
-                                    break;
+                                            metrosLimpiados++;
 
-                                case 2:
-
-                                    //SALON
-                                    JOptionPane.showMessageDialog(
-                                            null, "Empezando por la cocina: " + salonInt + "m2");
-
-                                    for (int i = 0; i < salonInt; i++) {
-
-                                        nivelBateria = (int) (nivelBateria - aspiradoFregado);
-
-                                        metrosLimpiados++;
-
-                                    }
-
-                                    lugarParado = "Salón";
-
-                                    JOptionPane.showMessageDialog(
-                                            null, "El nivel de bateria es: " + nivelBateria + " %");
-
-                                    JOptionPane.showMessageDialog(
-                                            null, "Los metros limpiados son: " + metrosLimpiados + "m2");
-
-                                    JOptionPane.showMessageDialog(
-                                            null, "La dependencia limpiada es el salón");
-
-                                    if (nivelBateria < 3) {
+                                        }
 
                                         lugarParado = "Salón";
 
                                         JOptionPane.showMessageDialog(
-                                                null, "Los metros limpiados son: " + metrosLimpiados + "m2");
+                                                null, "El nivel de bateria es: " + nivelBateria + " %");
 
                                         JOptionPane.showMessageDialog(
-                                                null, "El nivel de bateria es insuficiente, la aspiradora se ha parado");
+                                                null, "Los metros limpiados son: " + metrosLimpiados + "m2");
 
                                         JOptionPane.showMessageDialog(
                                                 null, "La dependencia limpiada es el salón");
 
-                                        //BASE CARGA
-                                        JOptionPane.showMessageDialog(
-                                                null, "Ha entrado usted en Base de carga: Entrando en modo de carga de bateria "
-                                                + "espere hasta que la carga llegue al 100%");
+                                        if (nivelBateria < 3) {
 
-                                        for (nivelBateria = 0; nivelBateria < 100; nivelBateria++) {
+                                            lugarParado = "Salón";
+
+                                            JOptionPane.showMessageDialog(
+                                                    null, "Los metros limpiados son: " + metrosLimpiados + "m2");
+
+                                            JOptionPane.showMessageDialog(
+                                                    null, "El nivel de bateria es insuficiente, la aspiradora se ha parado");
+
+                                            JOptionPane.showMessageDialog(
+                                                    null, "La dependencia limpiada es el salón");
+
+                                            //BASE CARGA
+                                            JOptionPane.showMessageDialog(
+                                                    null, "Ha entrado usted en Base de carga: Entrando en modo de carga de bateria "
+                                                    + "espere hasta que la carga llegue al 100%");
+
+                                            for (nivelBateria = 0; nivelBateria < 100; nivelBateria++) {
+
+                                            }
+
+                                            JOptionPane.showMessageDialog(
+                                                    null, "Carga de la bateria completa: " + nivelBateria + " %");
+
+                                            JOptionPane.showMessageDialog(
+                                                    null, "El nivel de bateria es: " + nivelBateria + " %");
 
                                         }
 
+                                        break;
+
+                                    case 3:
+
+                                        //CUARTO DE BAÑO
                                         JOptionPane.showMessageDialog(
-                                                null, "Carga de la bateria completa: " + nivelBateria + " %");
+                                                null, "Empezando por la cocina: " + cuartoBanioInt + "m2");
+
+                                        for (int i = 0; i < cuartoBanioInt; i++) {
+
+                                            nivelBateria = (int) (nivelBateria - aspiradoFregado);
+
+                                            metrosLimpiados++;
+
+                                        }
+
+                                        lugarParado = "Cuarto de baño";
 
                                         JOptionPane.showMessageDialog(
                                                 null, "El nivel de bateria es: " + nivelBateria + " %");
 
-                                    }
-
-                                    break;
-
-                                case 3:
-
-                                    //CUARTO DE BAÑO
-                                    JOptionPane.showMessageDialog(
-                                            null, "Empezando por la cocina: " + cuartoBanioInt + "m2");
-
-                                    for (int i = 0; i < cuartoBanioInt; i++) {
-
-                                        nivelBateria = (int) (nivelBateria - aspiradoFregado);
-
-                                        metrosLimpiados++;
-
-                                    }
-
-                                    lugarParado = "Cuarto de baño";
-
-                                    JOptionPane.showMessageDialog(
-                                            null, "El nivel de bateria es: " + nivelBateria + " %");
-
-                                    JOptionPane.showMessageDialog(
-                                            null, "Los metros limpiados son: " + metrosLimpiados + "m2");
-
-                                    JOptionPane.showMessageDialog(
-                                            null, "La dependencia limpiada es el cuarto de baño");
-
-                                    if (nivelBateria < 3) {
-
-                                        lugarParado = "Cuarto de Baño";
-
                                         JOptionPane.showMessageDialog(
                                                 null, "Los metros limpiados son: " + metrosLimpiados + "m2");
-
-                                        JOptionPane.showMessageDialog(
-                                                null, "El nivel de bateria es insuficiente, la aspiradora se ha parado");
 
                                         JOptionPane.showMessageDialog(
                                                 null, "La dependencia limpiada es el cuarto de baño");
 
-                                        //BASE CARGA
-                                        JOptionPane.showMessageDialog(
-                                                null, "Ha entrado usted en Base de carga: Entrando en modo de carga de bateria "
-                                                + "espere hasta que la carga llegue al 100%");
+                                        if (nivelBateria < 3) {
 
-                                        for (nivelBateria = 0; nivelBateria < 100; nivelBateria++) {
+                                            lugarParado = "Cuarto de Baño";
+
+                                            JOptionPane.showMessageDialog(
+                                                    null, "Los metros limpiados son: " + metrosLimpiados + "m2");
+
+                                            JOptionPane.showMessageDialog(
+                                                    null, "El nivel de bateria es insuficiente, la aspiradora se ha parado");
+
+                                            JOptionPane.showMessageDialog(
+                                                    null, "La dependencia limpiada es el cuarto de baño");
+
+                                            //BASE CARGA
+                                            JOptionPane.showMessageDialog(
+                                                    null, "Ha entrado usted en Base de carga: Entrando en modo de carga de bateria "
+                                                    + "espere hasta que la carga llegue al 100%");
+
+                                            for (nivelBateria = 0; nivelBateria < 100; nivelBateria++) {
+
+                                            }
+
+                                            JOptionPane.showMessageDialog(
+                                                    null, "Carga de la bateria completa: " + nivelBateria + " %");
+
+                                            JOptionPane.showMessageDialog(
+                                                    null, "El nivel de bateria es: " + nivelBateria + " %");
 
                                         }
 
+                                        break;
+
+                                    case 4:
+
+                                        //DORMITORIO 1
                                         JOptionPane.showMessageDialog(
-                                                null, "Carga de la bateria completa: " + nivelBateria + " %");
+                                                null, "Empezando por el dormitorio 1: " + dormitorioUnoInt + "m2");
 
-                                        JOptionPane.showMessageDialog(
-                                                null, "El nivel de bateria es: " + nivelBateria + " %");
+                                        for (int i = 0; i < dormitorioUnoInt; i++) {
 
-                                    }
+                                            nivelBateria = (int) (nivelBateria - aspiradoFregado);
 
-                                    break;
+                                            metrosLimpiados++;
 
-                                case 4:
-
-                                    //DORMITORIO 1
-                                    JOptionPane.showMessageDialog(
-                                            null, "Empezando por el dormitorio 1: " + dormitorioUnoInt + "m2");
-
-                                    for (int i = 0; i < dormitorioUnoInt; i++) {
-
-                                        nivelBateria = (int) (nivelBateria - aspiradoFregado);
-
-                                        metrosLimpiados++;
-
-                                    }
-
-                                    lugarParado = "Dormitorio 1";
-
-                                    JOptionPane.showMessageDialog(
-                                            null, "El nivel de bateria es: " + nivelBateria + " %");
-
-                                    JOptionPane.showMessageDialog(
-                                            null, "Los metros limpiados son: " + metrosLimpiados + "m2");
-
-                                    JOptionPane.showMessageDialog(
-                                            null, "La dependencia limpiada es el dormitorio 1");
-
-                                    if (nivelBateria < 3) {
+                                        }
 
                                         lugarParado = "Dormitorio 1";
 
                                         JOptionPane.showMessageDialog(
-                                                null, "Los metros limpiados son: " + metrosLimpiados + "m2");
+                                                null, "El nivel de bateria es: " + nivelBateria + " %");
 
                                         JOptionPane.showMessageDialog(
-                                                null, "El nivel de bateria es insuficiente, la aspiradora se ha parado");
+                                                null, "Los metros limpiados son: " + metrosLimpiados + "m2");
 
                                         JOptionPane.showMessageDialog(
                                                 null, "La dependencia limpiada es el dormitorio 1");
 
-                                        //BASE CARGA
-                                        JOptionPane.showMessageDialog(
-                                                null, "Ha entrado usted en Base de carga: Entrando en modo de carga de bateria "
-                                                + "espere hasta que la carga llegue al 100%");
+                                        if (nivelBateria < 3) {
 
-                                        for (nivelBateria = 0; nivelBateria < 100; nivelBateria++) {
+                                            lugarParado = "Dormitorio 1";
+
+                                            JOptionPane.showMessageDialog(
+                                                    null, "Los metros limpiados son: " + metrosLimpiados + "m2");
+
+                                            JOptionPane.showMessageDialog(
+                                                    null, "El nivel de bateria es insuficiente, la aspiradora se ha parado");
+
+                                            JOptionPane.showMessageDialog(
+                                                    null, "La dependencia limpiada es el dormitorio 1");
+
+                                            //BASE CARGA
+                                            JOptionPane.showMessageDialog(
+                                                    null, "Ha entrado usted en Base de carga: Entrando en modo de carga de bateria "
+                                                    + "espere hasta que la carga llegue al 100%");
+
+                                            for (nivelBateria = 0; nivelBateria < 100; nivelBateria++) {
+
+                                            }
+
+                                            JOptionPane.showMessageDialog(
+                                                    null, "Carga de la bateria completa: " + nivelBateria + " %");
+
+                                            JOptionPane.showMessageDialog(
+                                                    null, "El nivel de bateria es: " + nivelBateria + " %");
 
                                         }
 
+                                        break;
+
+                                    case 5:
+
+                                        //Dormitorio 2
                                         JOptionPane.showMessageDialog(
-                                                null, "Carga de la bateria completa: " + nivelBateria + " %");
+                                                null, "Empezando por la cocina: " + dormitorioDosInt + "m2");
+
+                                        for (int i = 0; i < dormitorioDosInt; i++) {
+
+                                            nivelBateria = (int) (nivelBateria - aspiradoFregado);
+
+                                            metrosLimpiados++;
+
+                                        }
+
+                                        lugarParado = "Dormitorio 2";
 
                                         JOptionPane.showMessageDialog(
                                                 null, "El nivel de bateria es: " + nivelBateria + " %");
-
-                                    }
-
-                                    break;
-
-                                case 5:
-
-                                    //Dormitorio 2
-                                    JOptionPane.showMessageDialog(
-                                            null, "Empezando por la cocina: " + dormitorioDosInt + "m2");
-
-                                    for (int i = 0; i < dormitorioDosInt; i++) {
-
-                                        nivelBateria = (int) (nivelBateria - aspiradoFregado);
-
-                                        metrosLimpiados++;
-
-                                    }
-
-                                    lugarParado = "Dormitorio 2";
-
-                                    JOptionPane.showMessageDialog(
-                                            null, "El nivel de bateria es: " + nivelBateria + " %");
-
-                                    JOptionPane.showMessageDialog(
-                                            null, "Los metros limpiados son: " + metrosLimpiados + "m2");
-
-                                    JOptionPane.showMessageDialog(
-                                            null, "La dependencia limpiada es el dormitorio 2");
-
-                                    if (nivelBateria < 3) {
-
-                                        lugarParado = "Dormitorio 2";
 
                                         JOptionPane.showMessageDialog(
                                                 null, "Los metros limpiados son: " + metrosLimpiados + "m2");
 
                                         JOptionPane.showMessageDialog(
-                                                null, "El nivel de bateria es insuficiente, la aspiradora se ha parado");
-
-                                        JOptionPane.showMessageDialog(
                                                 null, "La dependencia limpiada es el dormitorio 2");
 
-                                        //BASE CARGA
-                                        JOptionPane.showMessageDialog(
-                                                null, "Ha entrado usted en Base de carga: Entrando en modo de carga de bateria "
-                                                + "espere hasta que la carga llegue al 100%");
+                                        if (nivelBateria < 3) {
 
-                                        for (nivelBateria = 0; nivelBateria < 100; nivelBateria++) {
+                                            lugarParado = "Dormitorio 2";
+
+                                            JOptionPane.showMessageDialog(
+                                                    null, "Los metros limpiados son: " + metrosLimpiados + "m2");
+
+                                            JOptionPane.showMessageDialog(
+                                                    null, "El nivel de bateria es insuficiente, la aspiradora se ha parado");
+
+                                            JOptionPane.showMessageDialog(
+                                                    null, "La dependencia limpiada es el dormitorio 2");
+
+                                            //BASE CARGA
+                                            JOptionPane.showMessageDialog(
+                                                    null, "Ha entrado usted en Base de carga: Entrando en modo de carga de bateria "
+                                                    + "espere hasta que la carga llegue al 100%");
+
+                                            for (nivelBateria = 0; nivelBateria < 100; nivelBateria++) {
+
+                                            }
+
+                                            JOptionPane.showMessageDialog(
+                                                    null, "Carga de la bateria completa: " + nivelBateria + " %");
+
+                                            JOptionPane.showMessageDialog(
+                                                    null, "El nivel de bateria es: " + nivelBateria + " %");
 
                                         }
 
-                                        JOptionPane.showMessageDialog(
-                                                null, "Carga de la bateria completa: " + nivelBateria + " %");
+                                        break;
+
+                                    default:
 
                                         JOptionPane.showMessageDialog(
-                                                null, "El nivel de bateria es: " + nivelBateria + " %");
+                                                null, "Saliendo del menú");
 
-                                    }
+                                        break;
 
-                                    break;
+                                }
 
-                                default:
-
-                                    JOptionPane.showMessageDialog(
-                                            null, "Saliendo del menú");
-
-                                    break;
-
-                            }
-
-                        } else if (opcionModo == 3) {
-
-                            JOptionPane.showMessageDialog(
-                                    null, "Ha entrado usted en Aspiracion y fregado");
-
-                            JOptionPane.showMessageDialog(
-                                    null, "El nivel de bateria es: " + nivelBateria + " %");
-
-                            //COCINA
-                            JOptionPane.showMessageDialog(
-                                    null, "Empezando por la cocina: " + cocinaInt + "m2");
-
-                            for (int i = 0; i < cocinaInt; i++) {
-
-                                nivelBateria = (int) (nivelBateria - aspiradoFregado);
-
-                                metrosLimpiados++;
-
-                            }
-
-                            JOptionPane.showMessageDialog(
-                                    null, "El nivel de bateria es: " + nivelBateria + " %");
-
-                            JOptionPane.showMessageDialog(
-                                    null, "Los metros limpiados son: " + metrosLimpiados + "m2");
-
-                            JOptionPane.showMessageDialog(
-                                    null, "La dependencia limpiada es la cocina");
-
-                            lugarParado = "Cocina";
-
-                            if (nivelBateria < 3) {
-
-                                lugarParado = "Cocina";
+                            } else if (opcionModo == 3) {
 
                                 JOptionPane.showMessageDialog(
-                                        null, "El nivel de bateria es insuficiente, la aspiradora se ha parado");
+                                        null, "Ha entrado usted en Aspiracion y fregado");
+
+                                JOptionPane.showMessageDialog(
+                                        null, "El nivel de bateria es: " + nivelBateria + " %");
+
+                                //COCINA
+                                JOptionPane.showMessageDialog(
+                                        null, "Empezando por la cocina: " + cocinaInt + "m2");
+
+                                for (int i = 0; i < cocinaInt; i++) {
+
+                                    nivelBateria = (int) (nivelBateria - aspiradoFregado);
+
+                                    metrosLimpiados++;
+
+                                }
+
+                                JOptionPane.showMessageDialog(
+                                        null, "El nivel de bateria es: " + nivelBateria + " %");
+
+                                JOptionPane.showMessageDialog(
+                                        null, "Los metros limpiados son: " + metrosLimpiados + "m2");
 
                                 JOptionPane.showMessageDialog(
                                         null, "La dependencia limpiada es la cocina");
-                                do {
-                                    //Se pregunta al usuario si quiere salir del programa, con la ventana JOptionPane.YES_NO_OPTION
-                                    int op = JOptionPane.showConfirmDialog(null,
-                                            "¿Deseas salir?", "Salida del programa", JOptionPane.YES_NO_OPTION);
 
-                                    //Estructura if-else donde el usuario decidira si salir o no del menú
-                                    if (op == JOptionPane.YES_OPTION) {
-                                        // Quiere salir
-                                        JOptionPane.showMessageDialog(
-                                                null, "Saliendo del menú...."); // Depuración
-                                        repetir = false; // Condición de parada del programa
+                                lugarParado = "Cocina";
 
-                                    } else {
+                                if (nivelBateria < 3) {
+
+                                    lugarParado = "Cocina";
+
+                                    JOptionPane.showMessageDialog(
+                                            null, "El nivel de bateria es insuficiente, la aspiradora se ha parado");
+
+                                    JOptionPane.showMessageDialog(
+                                            null, "La dependencia limpiada es la cocina");
+                                    do {
+                                        //Se pregunta al usuario si quiere salir del programa, con la ventana JOptionPane.YES_NO_OPTION
+                                        int op = JOptionPane.showConfirmDialog(null,
+                                                "¿Deseas salir?", "Salida del programa", JOptionPane.YES_NO_OPTION);
+
+                                        //Estructura if-else donde el usuario decidira si salir o no del menú
+                                        if (op == JOptionPane.YES_OPTION) {
+                                            // Quiere salir
+                                            JOptionPane.showMessageDialog(
+                                                    null, "Saliendo del menú...."); // Depuración
+                                            repetir = false; // Condición de parada del programa
+
+                                        } else {
+
+                                        }
+                                    } while (repetir);
+
+                                    //BASE CARGA
+                                    JOptionPane.showMessageDialog(
+                                            null, "Ha entrado usted en Base de carga: Entrando en modo de carga de bateria "
+                                            + "espere hasta que la carga llegue al 100%");
+
+                                    for (nivelBateria = 0; nivelBateria < 100; nivelBateria++) {
 
                                     }
-                                } while (repetir);
 
-                                //BASE CARGA
+                                    JOptionPane.showMessageDialog(
+                                            null, "Carga de la bateria completa: " + nivelBateria + " %");
+
+                                }
+
+                                //SALON
                                 JOptionPane.showMessageDialog(
-                                        null, "Ha entrado usted en Base de carga: Entrando en modo de carga de bateria "
-                                        + "espere hasta que la carga llegue al 100%");
+                                        null, "Empezando por el salón: " + salonInt + "m2");
 
-                                for (nivelBateria = 0; nivelBateria < 100; nivelBateria++) {
+                                for (int i = 0; i < salonInt; i++) {
+
+                                    nivelBateria = (int) (nivelBateria - aspiradoFregado);
+
+                                    metrosLimpiados++;
 
                                 }
 
                                 JOptionPane.showMessageDialog(
-                                        null, "Carga de la bateria completa: " + nivelBateria + " %");
-
-                            }
-
-                            //SALON
-                            JOptionPane.showMessageDialog(
-                                    null, "Empezando por el salón: " + salonInt + "m2");
-
-                            for (int i = 0; i < salonInt; i++) {
-
-                                nivelBateria = (int) (nivelBateria - aspiradoFregado);
-
-                                metrosLimpiados++;
-
-                            }
-
-                            JOptionPane.showMessageDialog(
-                                    null, "El nivel de bateria es: " + nivelBateria + " %");
-
-                            JOptionPane.showMessageDialog(
-                                    null, "Los metros limpiados son: " + metrosLimpiados + "m2");
-
-                            JOptionPane.showMessageDialog(
-                                    null, "La dependencia limpiada es la cocina y el salón");
-
-                            lugarParado = "Salón";
-
-                            if (nivelBateria < 3) {
-
-                                lugarParado = "Salón";
+                                        null, "El nivel de bateria es: " + nivelBateria + " %");
 
                                 JOptionPane.showMessageDialog(
-                                        null, "El nivel de bateria es insuficiente, la aspiradora se ha parado");
+                                        null, "Los metros limpiados son: " + metrosLimpiados + "m2");
 
                                 JOptionPane.showMessageDialog(
                                         null, "La dependencia limpiada es la cocina y el salón");
-                                do {
-                                    //Se pregunta al usuario si quiere salir del programa, con la ventana JOptionPane.YES_NO_OPTION
-                                    int op = JOptionPane.showConfirmDialog(null,
-                                            "¿Deseas salir?", "Salida del programa", JOptionPane.YES_NO_OPTION);
 
-                                    //Estructura if-else donde el usuario decidira si salir o no del menú
-                                    if (op == JOptionPane.YES_OPTION) {
-                                        // Quiere salir
-                                        JOptionPane.showMessageDialog(
-                                                null, "Saliendo del menú...."); // Depuración
-                                        repetir = false; // Condición de parada del programa
+                                lugarParado = "Salón";
 
-                                    } else {
+                                if (nivelBateria < 3) {
+
+                                    lugarParado = "Salón";
+
+                                    JOptionPane.showMessageDialog(
+                                            null, "El nivel de bateria es insuficiente, la aspiradora se ha parado");
+
+                                    JOptionPane.showMessageDialog(
+                                            null, "La dependencia limpiada es la cocina y el salón");
+                                    do {
+                                        //Se pregunta al usuario si quiere salir del programa, con la ventana JOptionPane.YES_NO_OPTION
+                                        int op = JOptionPane.showConfirmDialog(null,
+                                                "¿Deseas salir?", "Salida del programa", JOptionPane.YES_NO_OPTION);
+
+                                        //Estructura if-else donde el usuario decidira si salir o no del menú
+                                        if (op == JOptionPane.YES_OPTION) {
+                                            // Quiere salir
+                                            JOptionPane.showMessageDialog(
+                                                    null, "Saliendo del menú...."); // Depuración
+                                            repetir = false; // Condición de parada del programa
+
+                                        } else {
+
+                                        }
+                                    } while (repetir);
+
+                                    //BASE CARGA
+                                    JOptionPane.showMessageDialog(
+                                            null, "Ha entrado usted en Base de carga: Entrando en modo de carga de bateria "
+                                            + "espere hasta que la carga llegue al 100%");
+
+                                    for (nivelBateria = 0; nivelBateria < 100; nivelBateria++) {
 
                                     }
-                                } while (repetir);
 
-                                //BASE CARGA
+                                    JOptionPane.showMessageDialog(
+                                            null, "Carga de la bateria completa: " + nivelBateria + " %");
+
+                                }
+
+                                //CUARTO DE BAÑO
                                 JOptionPane.showMessageDialog(
-                                        null, "Ha entrado usted en Base de carga: Entrando en modo de carga de bateria "
-                                        + "espere hasta que la carga llegue al 100%");
+                                        null, "Empezando por el cuarto de baño: " + cuartoBanioInt + "m2");
 
-                                for (nivelBateria = 0; nivelBateria < 100; nivelBateria++) {
+                                for (int i = 0; i < cuartoBanioInt; i++) {
+
+                                    nivelBateria = (int) (nivelBateria - aspiradoFregado);
+
+                                    metrosLimpiados++;
 
                                 }
 
                                 JOptionPane.showMessageDialog(
-                                        null, "Carga de la bateria completa: " + nivelBateria + " %");
-
-                            }
-
-                            //CUARTO DE BAÑO
-                            JOptionPane.showMessageDialog(
-                                    null, "Empezando por el cuarto de baño: " + cuartoBanioInt + "m2");
-
-                            for (int i = 0; i < cuartoBanioInt; i++) {
-
-                                nivelBateria = (int) (nivelBateria - aspiradoFregado);
-
-                                metrosLimpiados++;
-
-                            }
-
-                            JOptionPane.showMessageDialog(
-                                    null, "El nivel de bateria es: " + nivelBateria + " %");
-
-                            JOptionPane.showMessageDialog(
-                                    null, "Los metros limpiados son: " + metrosLimpiados + "m2");
-
-                            JOptionPane.showMessageDialog(
-                                    null, "La dependencia limpiada es la cocina, el salon y el cuarto de baño");
-                            lugarParado = "Cuarto de baño";
-
-                            if (nivelBateria < 3) {
-
-                                lugarParado = "Cuarto de baño";
+                                        null, "El nivel de bateria es: " + nivelBateria + " %");
 
                                 JOptionPane.showMessageDialog(
-                                        null, "El nivel de bateria es insuficiente, la aspiradora se ha parado");
+                                        null, "Los metros limpiados son: " + metrosLimpiados + "m2");
 
                                 JOptionPane.showMessageDialog(
                                         null, "La dependencia limpiada es la cocina, el salon y el cuarto de baño");
-                                do {
-                                    //Se pregunta al usuario si quiere salir del programa, con la ventana JOptionPane.YES_NO_OPTION
-                                    int op = JOptionPane.showConfirmDialog(null,
-                                            "¿Deseas salir?", "Salida del programa", JOptionPane.YES_NO_OPTION);
+                                lugarParado = "Cuarto de baño";
 
-                                    //Estructura if-else donde el usuario decidira si salir o no del menú
-                                    if (op == JOptionPane.YES_OPTION) {
-                                        // Quiere salir
-                                        JOptionPane.showMessageDialog(
-                                                null, "Saliendo del menú...."); // Depuración
-                                        repetir = false; // Condición de parada del programa
+                                if (nivelBateria < 3) {
 
-                                    } else {
+                                    lugarParado = "Cuarto de baño";
+
+                                    JOptionPane.showMessageDialog(
+                                            null, "El nivel de bateria es insuficiente, la aspiradora se ha parado");
+
+                                    JOptionPane.showMessageDialog(
+                                            null, "La dependencia limpiada es la cocina, el salon y el cuarto de baño");
+                                    do {
+                                        //Se pregunta al usuario si quiere salir del programa, con la ventana JOptionPane.YES_NO_OPTION
+                                        int op = JOptionPane.showConfirmDialog(null,
+                                                "¿Deseas salir?", "Salida del programa", JOptionPane.YES_NO_OPTION);
+
+                                        //Estructura if-else donde el usuario decidira si salir o no del menú
+                                        if (op == JOptionPane.YES_OPTION) {
+                                            // Quiere salir
+                                            JOptionPane.showMessageDialog(
+                                                    null, "Saliendo del menú...."); // Depuración
+                                            repetir = false; // Condición de parada del programa
+
+                                        } else {
+
+                                        }
+                                    } while (repetir);
+
+                                    //BASE CARGA
+                                    JOptionPane.showMessageDialog(
+                                            null, "Ha entrado usted en Base de carga: Entrando en modo de carga de bateria "
+                                            + "espere hasta que la carga llegue al 100%");
+
+                                    for (nivelBateria = 0; nivelBateria < 100; nivelBateria++) {
 
                                     }
-                                } while (repetir);
 
-                                //BASE CARGA
+                                    JOptionPane.showMessageDialog(
+                                            null, "Carga de la bateria completa: " + nivelBateria + " %");
+
+                                }
+
+                                //Dormitorio 1
                                 JOptionPane.showMessageDialog(
-                                        null, "Ha entrado usted en Base de carga: Entrando en modo de carga de bateria "
-                                        + "espere hasta que la carga llegue al 100%");
+                                        null, "Empezando por el dormitorio 1: " + dormitorioUnoInt + "m2");
 
-                                for (nivelBateria = 0; nivelBateria < 100; nivelBateria++) {
+                                for (int i = 0; i < dormitorioUnoInt; i++) {
+
+                                    nivelBateria = (int) (nivelBateria - aspiradoFregado);
+
+                                    metrosLimpiados++;
 
                                 }
 
                                 JOptionPane.showMessageDialog(
-                                        null, "Carga de la bateria completa: " + nivelBateria + " %");
-
-                            }
-
-                            //Dormitorio 1
-                            JOptionPane.showMessageDialog(
-                                    null, "Empezando por el dormitorio 1: " + dormitorioUnoInt + "m2");
-
-                            for (int i = 0; i < dormitorioUnoInt; i++) {
-
-                                nivelBateria = (int) (nivelBateria - aspiradoFregado);
-
-                                metrosLimpiados++;
-
-                            }
-
-                            JOptionPane.showMessageDialog(
-                                    null, "El nivel de bateria es: " + nivelBateria + " %");
-
-                            JOptionPane.showMessageDialog(
-                                    null, "Los metros limpiados son: " + metrosLimpiados + "m2");
-
-                            JOptionPane.showMessageDialog(
-                                    null, "La dependencia limpiada es la cocina, el salon, el cuarto de baño y el dormitorio 1");
-
-                            lugarParado = "Dormitorio 1";
-
-                            if (nivelBateria < 3) {
-
-                                lugarParado = "Dormitorio 1";
+                                        null, "El nivel de bateria es: " + nivelBateria + " %");
 
                                 JOptionPane.showMessageDialog(
-                                        null, "El nivel de bateria es insuficiente, la aspiradora se ha parado");
+                                        null, "Los metros limpiados son: " + metrosLimpiados + "m2");
 
                                 JOptionPane.showMessageDialog(
                                         null, "La dependencia limpiada es la cocina, el salon, el cuarto de baño y el dormitorio 1");
-                                do {
-                                    //Se pregunta al usuario si quiere salir del programa, con la ventana JOptionPane.YES_NO_OPTION
-                                    int op = JOptionPane.showConfirmDialog(null,
-                                            "¿Deseas salir?", "Salida del programa", JOptionPane.YES_NO_OPTION);
 
-                                    //Estructura if-else donde el usuario decidira si salir o no del menú
-                                    if (op == JOptionPane.YES_OPTION) {
-                                        // Quiere salir
-                                        JOptionPane.showMessageDialog(
-                                                null, "Saliendo del menú...."); // Depuración
-                                        repetir = false; // Condición de parada del programa
+                                lugarParado = "Dormitorio 1";
 
-                                    } else {
+                                if (nivelBateria < 3) {
+
+                                    lugarParado = "Dormitorio 1";
+
+                                    JOptionPane.showMessageDialog(
+                                            null, "El nivel de bateria es insuficiente, la aspiradora se ha parado");
+
+                                    JOptionPane.showMessageDialog(
+                                            null, "La dependencia limpiada es la cocina, el salon, el cuarto de baño y el dormitorio 1");
+                                    do {
+                                        //Se pregunta al usuario si quiere salir del programa, con la ventana JOptionPane.YES_NO_OPTION
+                                        int op = JOptionPane.showConfirmDialog(null,
+                                                "¿Deseas salir?", "Salida del programa", JOptionPane.YES_NO_OPTION);
+
+                                        //Estructura if-else donde el usuario decidira si salir o no del menú
+                                        if (op == JOptionPane.YES_OPTION) {
+                                            // Quiere salir
+                                            JOptionPane.showMessageDialog(
+                                                    null, "Saliendo del menú...."); // Depuración
+                                            repetir = false; // Condición de parada del programa
+
+                                        } else {
+
+                                        }
+                                    } while (repetir);
+
+                                    //BASE CARGA
+                                    JOptionPane.showMessageDialog(
+                                            null, "Ha entrado usted en Base de carga: Entrando en modo de carga de bateria "
+                                            + "espere hasta que la carga llegue al 100%");
+
+                                    for (nivelBateria = 0; nivelBateria < 100; nivelBateria++) {
 
                                     }
-                                } while (repetir);
 
-                                //BASE CARGA
+                                    JOptionPane.showMessageDialog(
+                                            null, "Carga de la bateria completa: " + nivelBateria + " %");
+
+                                }
+
+                                //Dormitorio 2
                                 JOptionPane.showMessageDialog(
-                                        null, "Ha entrado usted en Base de carga: Entrando en modo de carga de bateria "
-                                        + "espere hasta que la carga llegue al 100%");
+                                        null, "Empezando por el dormitorio 2: " + dormitorioDosInt + "m2");
 
-                                for (nivelBateria = 0; nivelBateria < 100; nivelBateria++) {
+                                for (int i = 0; i < dormitorioDosInt; i++) {
+
+                                    nivelBateria = (int) (nivelBateria - aspiradoFregado);
+
+                                    metrosLimpiados++;
 
                                 }
 
                                 JOptionPane.showMessageDialog(
-                                        null, "Carga de la bateria completa: " + nivelBateria + " %");
-
-                            }
-
-                            //Dormitorio 2
-                            JOptionPane.showMessageDialog(
-                                    null, "Empezando por el dormitorio 2: " + dormitorioDosInt + "m2");
-
-                            for (int i = 0; i < dormitorioDosInt; i++) {
-
-                                nivelBateria = (int) (nivelBateria - aspiradoFregado);
-
-                                metrosLimpiados++;
-
-                            }
-
-                            JOptionPane.showMessageDialog(
-                                    null, "El nivel de bateria es: " + nivelBateria + " %");
-
-                            JOptionPane.showMessageDialog(
-                                    null, "Los metros limpiados son: " + metrosLimpiados + "m2");
-
-                            JOptionPane.showMessageDialog(
-                                    null, "La dependencia limpiada es la cocina, el salon, el cuarto de baño, el dormitorio 1 y el dormitorio 2");
-
-                            lugarParado = "Dormitorio 2";
-
-                            if (nivelBateria < 3) {
-
-                                lugarParado = "Dormitorio 2";
+                                        null, "El nivel de bateria es: " + nivelBateria + " %");
 
                                 JOptionPane.showMessageDialog(
-                                        null, "El nivel de bateria es insuficiente, la aspiradora se ha parado");
+                                        null, "Los metros limpiados son: " + metrosLimpiados + "m2");
 
                                 JOptionPane.showMessageDialog(
                                         null, "La dependencia limpiada es la cocina, el salon, el cuarto de baño, el dormitorio 1 y el dormitorio 2");
-                                do {
-                                    //Se pregunta al usuario si quiere salir del programa, con la ventana JOptionPane.YES_NO_OPTION
-                                    int op = JOptionPane.showConfirmDialog(null,
-                                            "¿Deseas salir?", "Salida del programa", JOptionPane.YES_NO_OPTION);
 
-                                    //Estructura if-else donde el usuario decidira si salir o no del menú
-                                    if (op == JOptionPane.YES_OPTION) {
-                                        // Quiere salir
-                                        JOptionPane.showMessageDialog(
-                                                null, "Saliendo del menú...."); // Depuración
-                                        repetir = false; // Condición de parada del programa
+                                lugarParado = "Dormitorio 2";
 
-                                    } else {
+                                if (nivelBateria < 3) {
+
+                                    lugarParado = "Dormitorio 2";
+
+                                    JOptionPane.showMessageDialog(
+                                            null, "El nivel de bateria es insuficiente, la aspiradora se ha parado");
+
+                                    JOptionPane.showMessageDialog(
+                                            null, "La dependencia limpiada es la cocina, el salon, el cuarto de baño, el dormitorio 1 y el dormitorio 2");
+                                    do {
+                                        //Se pregunta al usuario si quiere salir del programa, con la ventana JOptionPane.YES_NO_OPTION
+                                        int op = JOptionPane.showConfirmDialog(null,
+                                                "¿Deseas salir?", "Salida del programa", JOptionPane.YES_NO_OPTION);
+
+                                        //Estructura if-else donde el usuario decidira si salir o no del menú
+                                        if (op == JOptionPane.YES_OPTION) {
+                                            // Quiere salir
+                                            JOptionPane.showMessageDialog(
+                                                    null, "Saliendo del menú...."); // Depuración
+                                            repetir = false; // Condición de parada del programa
+
+                                        } else {
+
+                                        }
+                                    } while (repetir);
+
+                                    //BASE CARGA
+                                    JOptionPane.showMessageDialog(
+                                            null, "Ha entrado usted en Base de carga: Entrando en modo de carga de bateria "
+                                            + "espere hasta que la carga llegue al 100%");
+
+                                    for (nivelBateria = 0; nivelBateria < 100; nivelBateria++) {
 
                                     }
-                                } while (repetir);
 
-                                //BASE CARGA
-                                JOptionPane.showMessageDialog(
-                                        null, "Ha entrado usted en Base de carga: Entrando en modo de carga de bateria "
-                                        + "espere hasta que la carga llegue al 100%");
-
-                                for (nivelBateria = 0; nivelBateria < 100; nivelBateria++) {
+                                    JOptionPane.showMessageDialog(
+                                            null, "Carga de la bateria completa: " + nivelBateria + " %");
 
                                 }
 
-                                JOptionPane.showMessageDialog(
-                                        null, "Carga de la bateria completa: " + nivelBateria + " %");
+                            } else if (opcionModo == 4) {
 
+                                JOptionPane.showMessageDialog(
+                                        null, "Saliendo del menú...");
                             }
 
-                        }else if (opcionModo == 4){
-                            
-                             JOptionPane.showMessageDialog(
-                                null, "Saliendo del menú...");
-                        }
+                            //PREGUNTAR PARA SALIR
+                            //Se pregunta al usuario si quiere salir del menú, con la ventana JOptionPane.YES_NO_OPTION
+                            int op = JOptionPane.showConfirmDialog(null,
+                                    "¿Deseas salir?", "Salida del menú", JOptionPane.YES_NO_OPTION);
+
+                            //Estructura if-else donde el usuario decidira si salir o no del programa
+                            if (op == JOptionPane.YES_OPTION) {
+                                // Quiere salir
+                                JOptionPane.showMessageDialog(
+                                        null, "Saliendo del menú...."); // Depuración
+                                repetir = false; // Condición de parada del programa
+
+                            } else {
+
+                                JOptionPane.showMessageDialog(
+                                        null, "Indique otra instrucción a realizar:");
+                            }
+
+                        } while (repetir);
 
                         //Si se cumple la condicion del while, se repite el bucle
                     } while (opcionModo < 0 || opcionModo > 4);
