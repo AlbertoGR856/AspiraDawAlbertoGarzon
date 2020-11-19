@@ -42,6 +42,9 @@ public class AspiradoraRoomba {
         int opcionModo;
         int opcionElegidaMenuCaracteristicas;
 
+        //Variable string para saber el lugar donde esta parado
+        String lugarParado = null;
+
         //Variable de tipo booleano para establecer la salida del programa
         boolean repetir = true;
 
@@ -204,13 +207,19 @@ public class AspiradoraRoomba {
                             JOptionPane.showMessageDialog(
                                     null, "El nivel de bateria es: " + bateriaActual + " %");
 
+                            JOptionPane.showMessageDialog(
+                                    null, "La dependencia limpiada es la cocina");
+
                             if (bateriaActual < 3) {
+
+                                lugarParado = "Cocina";
 
                                 JOptionPane.showMessageDialog(
                                         null, "El nivel de bateria es insuficiente, la aspiradora se ha parado");
 
                                 JOptionPane.showMessageDialog(
                                         null, "La dependencia limpiada es la cocina");
+
                                 do {
                                     //Se pregunta al usuario si quiere salir del programa, con la ventana JOptionPane.YES_NO_OPTION
                                     int op = JOptionPane.showConfirmDialog(null,
@@ -227,6 +236,9 @@ public class AspiradoraRoomba {
 
                                     }
                                 } while (repetir);
+
+                                JOptionPane.showMessageDialog(
+                                        null, "La dependencia limpiada es la cocina");
 
                                 //BASE CARGA
                                 JOptionPane.showMessageDialog(
@@ -255,13 +267,18 @@ public class AspiradoraRoomba {
                             JOptionPane.showMessageDialog(
                                     null, "El nivel de bateria es: " + bateriaActual + " %");
 
+                            JOptionPane.showMessageDialog(
+                                    null, "La dependencia limpiada es la cocina y el salón");
+
                             if (bateriaActual < 3) {
+
+                                lugarParado = "Salón";
 
                                 JOptionPane.showMessageDialog(
                                         null, "El nivel de bateria es insuficiente, la aspiradora se ha parado");
 
-                                JOptionPane.showMessageDialog(
-                                        null, "La dependencia limpiada es la cocina y el salón");
+                                lugarParado = "Salón";
+
                                 do {
                                     //Se pregunta al usuario si quiere salir del programa, con la ventana JOptionPane.YES_NO_OPTION
                                     int op = JOptionPane.showConfirmDialog(null,
@@ -278,6 +295,9 @@ public class AspiradoraRoomba {
 
                                     }
                                 } while (repetir);
+
+                                JOptionPane.showMessageDialog(
+                                        null, "La dependencia limpiada es la cocina y el salón");
 
                                 //BASE CARGA
                                 JOptionPane.showMessageDialog(
@@ -308,6 +328,8 @@ public class AspiradoraRoomba {
 
                             if (bateriaActual < 3) {
 
+                                lugarParado = "Cuarto de baño";
+
                                 JOptionPane.showMessageDialog(
                                         null, "El nivel de bateria es insuficiente, la aspiradora se ha parado");
 
@@ -329,6 +351,9 @@ public class AspiradoraRoomba {
 
                                     }
                                 } while (repetir);
+
+                                JOptionPane.showMessageDialog(
+                                        null, "La dependencia limpiada es la cocina, el salon y el cuarto de baño");
 
                                 //BASE CARGA
                                 JOptionPane.showMessageDialog(
@@ -359,6 +384,8 @@ public class AspiradoraRoomba {
 
                             if (bateriaActual < 3) {
 
+                                lugarParado = "Dormitorio 1";
+
                                 JOptionPane.showMessageDialog(
                                         null, "El nivel de bateria es insuficiente, la aspiradora se ha parado");
 
@@ -380,6 +407,9 @@ public class AspiradoraRoomba {
 
                                     }
                                 } while (repetir);
+
+                                JOptionPane.showMessageDialog(
+                                        null, "La dependencia limpiada es la cocina, el salon, el cuarto de baño y el dormitorio 1");
 
                                 //BASE CARGA
                                 JOptionPane.showMessageDialog(
@@ -410,6 +440,8 @@ public class AspiradoraRoomba {
 
                             if (bateriaActual < 3) {
 
+                                lugarParado = "Dormirtorio 2";
+
                                 JOptionPane.showMessageDialog(
                                         null, "El nivel de bateria es insuficiente, la aspiradora se ha parado");
 
@@ -431,6 +463,9 @@ public class AspiradoraRoomba {
 
                                     }
                                 } while (repetir);
+
+                                JOptionPane.showMessageDialog(
+                                        null, "La dependencia limpiada es la cocina, el salon, el cuarto de baño, el dormitorio 1 y el dormitorio 2");
 
                                 //BASE CARGA
                                 JOptionPane.showMessageDialog(
@@ -478,6 +513,8 @@ public class AspiradoraRoomba {
 
                                     }
 
+                                    lugarParado = "Cocina";
+
                                     JOptionPane.showMessageDialog(
                                             null, "El nivel de bateria es: " + bateriaActual + " %");
 
@@ -485,6 +522,8 @@ public class AspiradoraRoomba {
                                             null, "La dependencia limpiada es la cocina");
 
                                     if (bateriaActual < 3) {
+
+                                        lugarParado = "Cocina";
 
                                         JOptionPane.showMessageDialog(
                                                 null, "El nivel de bateria es insuficiente, la aspiradora se ha parado");
@@ -508,6 +547,8 @@ public class AspiradoraRoomba {
 
                                     }
 
+                                    lugarParado = "Salón";
+
                                     JOptionPane.showMessageDialog(
                                             null, "El nivel de bateria es: " + bateriaActual + " %");
 
@@ -515,6 +556,8 @@ public class AspiradoraRoomba {
                                             null, "La dependencia limpiada es el salón");
 
                                     if (bateriaActual < 3) {
+
+                                        lugarParado = "Salón";
 
                                         JOptionPane.showMessageDialog(
                                                 null, "El nivel de bateria es insuficiente, la aspiradora se ha parado");
@@ -538,6 +581,8 @@ public class AspiradoraRoomba {
 
                                     }
 
+                                    lugarParado = "Cuarto de baño";
+
                                     JOptionPane.showMessageDialog(
                                             null, "El nivel de bateria es: " + bateriaActual + " %");
 
@@ -545,6 +590,8 @@ public class AspiradoraRoomba {
                                             null, "La dependencia limpiada es el cuarto de baño");
 
                                     if (bateriaActual < 3) {
+
+                                        lugarParado = "Cuarto de Baño";
 
                                         JOptionPane.showMessageDialog(
                                                 null, "El nivel de bateria es insuficiente, la aspiradora se ha parado");
@@ -568,6 +615,8 @@ public class AspiradoraRoomba {
 
                                     }
 
+                                    lugarParado = "Dormitorio 1";
+
                                     JOptionPane.showMessageDialog(
                                             null, "El nivel de bateria es: " + bateriaActual + " %");
 
@@ -575,6 +624,8 @@ public class AspiradoraRoomba {
                                             null, "La dependencia limpiada es el dormitorio 1");
 
                                     if (bateriaActual < 3) {
+
+                                        lugarParado = "Dormitorio 1";
 
                                         JOptionPane.showMessageDialog(
                                                 null, "El nivel de bateria es insuficiente, la aspiradora se ha parado");
@@ -598,6 +649,8 @@ public class AspiradoraRoomba {
 
                                     }
 
+                                    lugarParado = "Dormitorio 2";
+
                                     JOptionPane.showMessageDialog(
                                             null, "El nivel de bateria es: " + bateriaActual + " %");
 
@@ -605,6 +658,8 @@ public class AspiradoraRoomba {
                                             null, "La dependencia limpiada es el dormitorio 2");
 
                                     if (bateriaActual < 3) {
+
+                                        lugarParado = "Dormitorio 2";
 
                                         JOptionPane.showMessageDialog(
                                                 null, "El nivel de bateria es insuficiente, la aspiradora se ha parado");
@@ -646,7 +701,11 @@ public class AspiradoraRoomba {
                             JOptionPane.showMessageDialog(
                                     null, "El nivel de bateria es: " + bateriaActual + " %");
 
+                            lugarParado = "Cocina";
+
                             if (bateriaActual < 3) {
+
+                                lugarParado = "Cocina";
 
                                 JOptionPane.showMessageDialog(
                                         null, "El nivel de bateria es insuficiente, la aspiradora se ha parado");
@@ -697,7 +756,11 @@ public class AspiradoraRoomba {
                             JOptionPane.showMessageDialog(
                                     null, "El nivel de bateria es: " + bateriaActual + " %");
 
+                            lugarParado = "Salón";
+
                             if (bateriaActual < 3) {
+
+                                lugarParado = "Salón";
 
                                 JOptionPane.showMessageDialog(
                                         null, "El nivel de bateria es insuficiente, la aspiradora se ha parado");
@@ -748,7 +811,11 @@ public class AspiradoraRoomba {
                             JOptionPane.showMessageDialog(
                                     null, "El nivel de bateria es: " + bateriaActual + " %");
 
+                            lugarParado = "Cuarto de baño";
+
                             if (bateriaActual < 3) {
+
+                                lugarParado = "Cuarto de baño";
 
                                 JOptionPane.showMessageDialog(
                                         null, "El nivel de bateria es insuficiente, la aspiradora se ha parado");
@@ -799,7 +866,11 @@ public class AspiradoraRoomba {
                             JOptionPane.showMessageDialog(
                                     null, "El nivel de bateria es: " + bateriaActual + " %");
 
+                            lugarParado = "Dormitorio 1";
+
                             if (bateriaActual < 3) {
+
+                                lugarParado = "Dormitorio 1";
 
                                 JOptionPane.showMessageDialog(
                                         null, "El nivel de bateria es insuficiente, la aspiradora se ha parado");
@@ -850,7 +921,11 @@ public class AspiradoraRoomba {
                             JOptionPane.showMessageDialog(
                                     null, "El nivel de bateria es: " + bateriaActual + " %");
 
+                            lugarParado = "Dormitorio 2";
+
                             if (bateriaActual < 3) {
+
+                                lugarParado = "Dormitorio 2";
 
                                 JOptionPane.showMessageDialog(
                                         null, "El nivel de bateria es insuficiente, la aspiradora se ha parado");
@@ -927,8 +1002,26 @@ public class AspiradoraRoomba {
                                 //Se muestra el lugar donde esta parado la aspiradora
                             } else if (opcionElegidaMenuCaracteristicas == 3) {
 
-                                JOptionPane.showMessageDialog(
-                                        null, "El aspirador se encuentra parado en: " + nivelBateria);
+                                if (lugarParado.equals("Cocina")) {
+
+                                    JOptionPane.showMessageDialog(null, "La aspiradora se ha quedado parada en la cocina");
+
+                                } else if (lugarParado.equals("Salón")) {
+
+                                    JOptionPane.showMessageDialog(null, "La aspiradora se ha quedado parada en el salón");
+                                } else if (lugarParado.equals("Cuarto de baño")) {
+
+                                    JOptionPane.showMessageDialog(null, "La aspiradora se ha quedado parada en el cuarto de baño");
+
+                                } else if (lugarParado.equals("Dormitorio 1")) {
+
+                                    JOptionPane.showMessageDialog(null, "La aspiradora se ha quedado parada en el dormitorio 1");
+
+                                } else if (lugarParado.equals("Dormitorio 2")) {
+
+                                    JOptionPane.showMessageDialog(null, "La aspiradora se ha quedado parada en el dormitorio 2");
+
+                                }
 
                                 //Se muestran las dependencias y sus metros cuadrados
                             } else if (opcionElegidaMenuCaracteristicas == 4) {
