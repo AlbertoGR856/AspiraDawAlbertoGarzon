@@ -130,7 +130,7 @@ public class AspiradoraRoomba {
             do {
 
                 String bateria = JOptionPane.showInputDialog(
-                        null, "Introduzca el nivel de bateria (0-100");
+                        null, "Introduzca el nivel de bateria (0-100)");
 
                 nivelBateria = Integer.parseInt(bateria);
             } while (nivelBateria < 0 || nivelBateria > 100);
@@ -241,23 +241,6 @@ public class AspiradoraRoomba {
                                     JOptionPane.showMessageDialog(
                                             null, "El nivel de bateria es insuficiente, la aspiradora se ha parado");
 
-                                    do {
-                                        //Se pregunta al usuario si quiere salir del programa, con la ventana JOptionPane.YES_NO_OPTION
-                                        int op = JOptionPane.showConfirmDialog(null,
-                                                "¿Deseas salir?", "Salida del programa", JOptionPane.YES_NO_OPTION);
-
-                                        //Estructura if-else donde el usuario decidira si salir o no del menú
-                                        if (op == JOptionPane.YES_OPTION) {
-                                            // Quiere salir
-                                            JOptionPane.showMessageDialog(
-                                                    null, "Saliendo del menú...."); // Depuración
-                                            repetir = false; // Condición de parada del programa
-
-                                        } else {
-
-                                        }
-                                    } while (repetir);
-
                                     //BASE CARGA
                                     //Se repite el mismo proceso que antes, pero dentro del modo de ejecucion, para poder seguir continuando
                                     //la limpieza del resto de dependencias
@@ -309,23 +292,6 @@ public class AspiradoraRoomba {
 
                                     lugarParado = "Salón";
 
-                                    do {
-                                        //Se pregunta al usuario si quiere salir del programa, con la ventana JOptionPane.YES_NO_OPTION
-                                        int op = JOptionPane.showConfirmDialog(null,
-                                                "¿Deseas salir?", "Salida del programa", JOptionPane.YES_NO_OPTION);
-
-                                        //Estructura if-else donde el usuario decidira si salir o no del menú
-                                        if (op == JOptionPane.YES_OPTION) {
-                                            // Quiere salir
-                                            JOptionPane.showMessageDialog(
-                                                    null, "Saliendo del menú...."); // Depuración
-                                            repetir = false; // Condición de parada del programa
-
-                                        } else {
-
-                                        }
-                                    } while (repetir);
-
                                     //BASE CARGA
                                     JOptionPane.showMessageDialog(
                                             null, "Ha entrado usted en Base de carga: Entrando en modo de carga de bateria "
@@ -370,23 +336,6 @@ public class AspiradoraRoomba {
 
                                     JOptionPane.showMessageDialog(
                                             null, "El nivel de bateria es insuficiente, la aspiradora se ha parado");
-
-                                    do {
-                                        //Se pregunta al usuario si quiere salir del programa, con la ventana JOptionPane.YES_NO_OPTION
-                                        int op = JOptionPane.showConfirmDialog(null,
-                                                "¿Deseas salir?", "Salida del programa", JOptionPane.YES_NO_OPTION);
-
-                                        //Estructura if-else donde el usuario decidira si salir o no del menú
-                                        if (op == JOptionPane.YES_OPTION) {
-                                            // Quiere salir
-                                            JOptionPane.showMessageDialog(
-                                                    null, "Saliendo del menú...."); // Depuración
-                                            repetir = false; // Condición de parada del programa
-
-                                        } else {
-
-                                        }
-                                    } while (repetir);
 
                                     //BASE CARGA
                                     JOptionPane.showMessageDialog(
@@ -433,23 +382,6 @@ public class AspiradoraRoomba {
                                     JOptionPane.showMessageDialog(
                                             null, "El nivel de bateria es insuficiente, la aspiradora se ha parado");
 
-                                    do {
-                                        //Se pregunta al usuario si quiere salir del programa, con la ventana JOptionPane.YES_NO_OPTION
-                                        int op = JOptionPane.showConfirmDialog(null,
-                                                "¿Deseas salir?", "Salida del programa", JOptionPane.YES_NO_OPTION);
-
-                                        //Estructura if-else donde el usuario decidira si salir o no del menú
-                                        if (op == JOptionPane.YES_OPTION) {
-                                            // Quiere salir
-                                            JOptionPane.showMessageDialog(
-                                                    null, "Saliendo del menú...."); // Depuración
-                                            repetir = false; // Condición de parada del programa
-
-                                        } else {
-
-                                        }
-                                    } while (repetir);
-
                                     //BASE CARGA
                                     JOptionPane.showMessageDialog(
                                             null, "Ha entrado usted en Base de carga: Entrando en modo de carga de bateria "
@@ -494,23 +426,6 @@ public class AspiradoraRoomba {
 
                                     JOptionPane.showMessageDialog(
                                             null, "El nivel de bateria es insuficiente, la aspiradora se ha parado");
-
-                                    do {
-                                        //Se pregunta al usuario si quiere salir del programa, con la ventana JOptionPane.YES_NO_OPTION
-                                        int op = JOptionPane.showConfirmDialog(null,
-                                                "¿Deseas salir?", "Salida del programa", JOptionPane.YES_NO_OPTION);
-
-                                        //Estructura if-else donde el usuario decidira si salir o no del menú
-                                        if (op == JOptionPane.YES_OPTION) {
-                                            // Quiere salir
-                                            JOptionPane.showMessageDialog(
-                                                    null, "Saliendo del menú...."); // Depuración
-                                            repetir = false; // Condición de parada del programa
-
-                                        } else {
-
-                                        }
-                                    } while (repetir);
 
                                     //BASE CARGA
                                     JOptionPane.showMessageDialog(
@@ -870,22 +785,6 @@ public class AspiradoraRoomba {
 
                                     JOptionPane.showMessageDialog(
                                             null, "Los metros limpiados son: " + metrosLimpiados + "m2");
-                                    do {
-                                        //Se pregunta al usuario si quiere salir del programa, con la ventana JOptionPane.YES_NO_OPTION
-                                        int op = JOptionPane.showConfirmDialog(null,
-                                                "¿Deseas salir?", "Salida del programa", JOptionPane.YES_NO_OPTION);
-
-                                        //Estructura if-else donde el usuario decidira si salir o no del menú
-                                        if (op == JOptionPane.YES_OPTION) {
-                                            // Quiere salir
-                                            JOptionPane.showMessageDialog(
-                                                    null, "Saliendo del menú...."); // Depuración
-                                            repetir = false; // Condición de parada del programa
-
-                                        } else {
-
-                                        }
-                                    } while (repetir);
 
                                     //BASE CARGA
                                     JOptionPane.showMessageDialog(
@@ -937,23 +836,6 @@ public class AspiradoraRoomba {
                                     JOptionPane.showMessageDialog(
                                             null, "Los metros limpiados son: " + metrosLimpiados + "m2");
 
-                                    do {
-                                        //Se pregunta al usuario si quiere salir del programa, con la ventana JOptionPane.YES_NO_OPTION
-                                        int op = JOptionPane.showConfirmDialog(null,
-                                                "¿Deseas salir?", "Salida del programa", JOptionPane.YES_NO_OPTION);
-
-                                        //Estructura if-else donde el usuario decidira si salir o no del menú
-                                        if (op == JOptionPane.YES_OPTION) {
-                                            // Quiere salir
-                                            JOptionPane.showMessageDialog(
-                                                    null, "Saliendo del menú...."); // Depuración
-                                            repetir = false; // Condición de parada del programa
-
-                                        } else {
-
-                                        }
-                                    } while (repetir);
-
                                     //BASE CARGA
                                     JOptionPane.showMessageDialog(
                                             null, "Ha entrado usted en Base de carga: Entrando en modo de carga de bateria "
@@ -1000,23 +882,6 @@ public class AspiradoraRoomba {
 
                                     JOptionPane.showMessageDialog(
                                             null, "Los metros limpiados son: " + metrosLimpiados + "m2");
-
-                                    do {
-                                        //Se pregunta al usuario si quiere salir del programa, con la ventana JOptionPane.YES_NO_OPTION
-                                        int op = JOptionPane.showConfirmDialog(null,
-                                                "¿Deseas salir?", "Salida del programa", JOptionPane.YES_NO_OPTION);
-
-                                        //Estructura if-else donde el usuario decidira si salir o no del menú
-                                        if (op == JOptionPane.YES_OPTION) {
-                                            // Quiere salir
-                                            JOptionPane.showMessageDialog(
-                                                    null, "Saliendo del menú...."); // Depuración
-                                            repetir = false; // Condición de parada del programa
-
-                                        } else {
-
-                                        }
-                                    } while (repetir);
 
                                     //BASE CARGA
                                     JOptionPane.showMessageDialog(
@@ -1065,23 +930,6 @@ public class AspiradoraRoomba {
                                     JOptionPane.showMessageDialog(
                                             null, "Los metros limpiados son: " + metrosLimpiados + "m2");
 
-                                    do {
-                                        //Se pregunta al usuario si quiere salir del programa, con la ventana JOptionPane.YES_NO_OPTION
-                                        int op = JOptionPane.showConfirmDialog(null,
-                                                "¿Deseas salir?", "Salida del programa", JOptionPane.YES_NO_OPTION);
-
-                                        //Estructura if-else donde el usuario decidira si salir o no del menú
-                                        if (op == JOptionPane.YES_OPTION) {
-                                            // Quiere salir
-                                            JOptionPane.showMessageDialog(
-                                                    null, "Saliendo del menú...."); // Depuración
-                                            repetir = false; // Condición de parada del programa
-
-                                        } else {
-
-                                        }
-                                    } while (repetir);
-
                                     //BASE CARGA
                                     JOptionPane.showMessageDialog(
                                             null, "Ha entrado usted en Base de carga: Entrando en modo de carga de bateria "
@@ -1127,22 +975,6 @@ public class AspiradoraRoomba {
 
                                     JOptionPane.showMessageDialog(
                                             null, "Los metros limpiados son: " + metrosLimpiados + "m2");
-                                    do {
-                                        //Se pregunta al usuario si quiere salir del programa, con la ventana JOptionPane.YES_NO_OPTION
-                                        int op = JOptionPane.showConfirmDialog(null,
-                                                "¿Deseas salir?", "Salida del programa", JOptionPane.YES_NO_OPTION);
-
-                                        //Estructura if-else donde el usuario decidira si salir o no del menú
-                                        if (op == JOptionPane.YES_OPTION) {
-                                            // Quiere salir
-                                            JOptionPane.showMessageDialog(
-                                                    null, "Saliendo del menú...."); // Depuración
-                                            repetir = false; // Condición de parada del programa
-
-                                        } else {
-
-                                        }
-                                    } while (repetir);
 
                                     //BASE CARGA
                                     JOptionPane.showMessageDialog(
